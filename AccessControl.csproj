@@ -98,26 +98,57 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allocation.cs" />
     <Compile Include="Credential.cs" />
-    <Compile Include="LogIn.cs">
+    <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogIn.Designer.cs">
-      <DependentUpon>LogIn.cs</DependentUpon>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogIn.Designer.cs">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistrationDevelopers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrationDevelopers.Designer.cs">
+      <DependentUpon>frmRegistrationDevelopers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistrationProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrationProjects.Designer.cs">
+      <DependentUpon>frmRegistrationProjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project.cs" />
+    <Compile Include="ProjectRepository.cs" />
     <Compile Include="Repository.cs" />
-    <Compile Include="Sistema.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sistema.Designer.cs">
-      <DependentUpon>Sistema.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="UserRepository.cs" />
-    <EmbeddedResource Include="LogIn.resx">
-      <DependentUpon>LogIn.cs</DependentUpon>
+    <Compile Include="Developer.cs" />
+    <Compile Include="DeveloperRepository.cs" />
+    <Compile Include="Task.cs" />
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogIn.resx">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistrationDevelopers.resx">
+      <DependentUpon>frmRegistrationDevelopers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -128,9 +159,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Sistema.resx">
-      <DependentUpon>Sistema.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

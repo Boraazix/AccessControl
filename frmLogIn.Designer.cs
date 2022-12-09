@@ -1,11 +1,11 @@
 ﻿namespace AccessControl
 {
-    partial class LogIn
+    partial class frmLogIn
     {
         /// <summary>
         /// Variável de designer necessária.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private global::System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Limpar os recursos que estão sendo usados.
@@ -52,9 +52,9 @@
             // btnAuthenticate
             // 
             this.btnAuthenticate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAuthenticate.Location = new System.Drawing.Point(155, 66);
+            this.btnAuthenticate.Location = new System.Drawing.Point(151, 66);
             this.btnAuthenticate.Name = "btnAuthenticate";
-            this.btnAuthenticate.Size = new System.Drawing.Size(88, 23);
+            this.btnAuthenticate.Size = new System.Drawing.Size(92, 23);
             this.btnAuthenticate.TabIndex = 6;
             this.btnAuthenticate.Text = "Authenticate";
             this.btnAuthenticate.UseVisualStyleBackColor = true;
@@ -64,6 +64,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(79, 36);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(164, 20);
             this.txtPassword.TabIndex = 5;
             // 
@@ -94,14 +95,16 @@
             this.lblEmail.TabIndex = 2;
             this.lblEmail.Text = "Email:";
             // 
-            // LogIn
+            // frmLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(252, 97);
             this.Controls.Add(this.pnlMain);
-            this.Name = "LogIn";
+            this.MaximizeBox = false;
+            this.Name = "frmLogIn";
             this.Text = "Access Control";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLogIn_FormClosed);
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             this.ResumeLayout(false);
@@ -110,12 +113,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Button btnAuthenticate;
+        private global::System.Windows.Forms.Panel pnlMain;
+        private global::System.Windows.Forms.Label lblPassword;
+        private global::System.Windows.Forms.Label lblEmail;
+        private global::System.Windows.Forms.TextBox txtPassword;
+        private global::System.Windows.Forms.TextBox txtEmail;
+        private global::System.Windows.Forms.Button btnAuthenticate;
     }
 }
 

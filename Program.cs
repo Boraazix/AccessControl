@@ -14,17 +14,10 @@ namespace AccessControl
         [STAThread]
         static void Main()
         {
-            Credential c = new Credential();
-            User u = new User();
-            u.Name = "Jacinto";
-            c.Email = "russell.ed.123@gmail.com";
-            c.Password = "70873";
-            u.Credential = c;
-            UserRepository.Save(u);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogIn());
+            Application.Run(new frmLogIn());
         }
     }
 }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace AccessControl
 {
-    [Table("credenciais")]
+    [Table("credentials")]
     public class Credential
     {
         public Int64 Id { get; set; }
@@ -20,7 +20,7 @@ namespace AccessControl
         [Index(IsUnique = true)]
         [StringLength(250)]
         public String Email { get; set; }
-
+        [StringLength(64)]
         private String _password;
         public String Password
         {
@@ -28,14 +28,15 @@ namespace AccessControl
             {
                 return _password;
             }
-            set 
+            set
             {
                 _password = ComputeSHA256(value, SALT);
             }
         }
+        public bool Active { get; set; }
         public bool Administrator { get; set; }
         [Required]
-        public User User { get; set; }
+        public Developer User { get; set; }
 
         #region Hashing
         public static String ComputeSHA256(String input)
@@ -70,35 +71,44 @@ namespace AccessControl
             return hash;
         }
         #endregion
-
-        public bool ValidateUser(string email, string password)
+        public Credential() { }
+        public Credential(String email, String password,bool active, bool adm)
         {
-            User user = UserRepository.FindByEmail(email);
-            if (user != null)
+            Email= email;
+            Password= password;
+            Active= active;
+            Administrator = adm;
+        }
+        public static bool ValidateDev(string email, string passwordWR)
+        {
+            Developer dev = DeveloperRepository.FindByEmail(email);
+            if (dev != null)
             {
-                string passwordDB = user.Credential.Password;
-                    password= ComputeSHA256(ComputeSHA256(password, SALT), SALT);
-                    if(passwordDB==password)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("This password is incorrect, please try again", "PASSWORD WRONG", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        return false;
-                    }
+                string passwordDB = dev.Credential.Password;
+                // the password is encrypted two times, when is saved on DB and when 
+                // is placed in a object. The entry of user need to be encrypted two times too.
+                passwordWR = ComputeSHA256(ComputeSHA256(passwordWR, SALT), SALT);
+                if (passwordDB == passwordWR)
+                {
+                    return true;
                 }
                 else
                 {
-                    MessageBox.Show("This email is incorrect, please try again", "EMAIL WRONG", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("This password is incorrect, please try again", "PASSWORD WRONG", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return false;
                 }
+            }
+            else
+            {
+                MessageBox.Show("This email is incorrect, please try again", "EMAIL WRONG", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
         }
         public override string ToString()
         {
-            return Id + ", "+Email+", "+Password+", "+
-                (Administrator?"Administrador":"Usuário Comum") + 
-                (this.User==null?"": ", Usuário: " + User.Id)+".";
+            return Id + ", " + Email + ", " + Password + ", " +
+                (Administrator ? "Administrador" : "Usuário Comum") +
+                (this.User == null ? "" : ", Usuário: " + User.Id) + ".";
         }
     }
 }

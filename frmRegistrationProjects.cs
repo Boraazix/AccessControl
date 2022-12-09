@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AccessControl
+namespace ControleAcesso
 {
-    public partial class Sistema : Form
-    { 
-        private Sistema()
+    public partial class frmRegistrationProjects : Form
+    {
+        public frmRegistrationProjects()
         {
             InitializeComponent();
         }

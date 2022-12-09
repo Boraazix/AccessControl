@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace AccessControl
 {
-    public class UserRepository
+    public class DeveloperRepository
     {
-        public static void Save(User usuario)
+        public static void Save(Developer dev)
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    if(usuario.Id == 0)
+                    if(dev.Id == 0)
                     {
-                        dbContext.Users.Add(usuario);
+                        dbContext.Developers.Add(dev);
                     }
                     else
                     {
-                        dbContext.Entry(usuario).State = EntityState.Modified;
+                        dbContext.Entry(dev).State = EntityState.Modified;
                     }
                     dbContext.SaveChanges();
                 }
@@ -31,13 +31,13 @@ namespace AccessControl
                 throw;
             }
         }
-        public static List<User> FindAll()
+        public static List<Developer> FindAll()
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    return dbContext.Users.Include("Credencial").ToList();
+                    return dbContext.Developers.Include("Credential").ToList();
                 }
             }
             catch(Exception)
@@ -45,13 +45,13 @@ namespace AccessControl
                 throw;
             }
         }
-        public static User FindById(Int64 id)
+        public static Developer FindById(Int64 id)
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    return dbContext.Users.Find(id);
+                    return dbContext.Developers.Find(id);
                 }
             }
             catch (Exception)
@@ -59,13 +59,13 @@ namespace AccessControl
                 throw;
             }
         }
-        public static User FindByIdWCredencial(Int64 id)
+        public static Developer FindByIdWCredencial(Int64 id)
         {
             try
             {
                 using(Repository dbContext = new Repository())
                 {
-                    return dbContext.Users.Include("Credencial").Where(u=>u.Id==id).FirstOrDefault<User>();
+                    return dbContext.Developers.Include("Credential").Where(u=>u.Id==id).FirstOrDefault<Developer>();
                 }
             }
             catch (Exception)
@@ -73,15 +73,15 @@ namespace AccessControl
                 throw;
             }
         }
-        public static List<User> FindByPartialName(String partialName)
+        public static List<Developer> FindByPartialName(String partialName)
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    return dbContext.Users
+                    return dbContext.Developers
                         .Where(u => u.Name.Contains(partialName))
-                        .ToList<User>();
+                        .ToList<Developer>();
                 }
             }
             catch (Exception)
@@ -89,14 +89,14 @@ namespace AccessControl
                 throw;
             }
         }
-        public static void Remove(User usuario)
+        public static void Remove(Developer dev)
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    dbContext.Users.Attach(usuario);
-                    dbContext.Users.Remove(usuario);
+                    dbContext.Developers.Attach(dev);
+                    dbContext.Developers.Remove(dev);
 
                     dbContext.SaveChanges();
                 }
@@ -106,13 +106,13 @@ namespace AccessControl
                 throw;
             }
         }
-        public static User FindByEmail(String email)
+        public static Developer FindByEmail(String email)
         {
             try
             {
                 using(Repository dbContext = new Repository())
                 {
-                    return dbContext.Users.Include("Credential").Where(u=> u.Credential.Email==email).FirstOrDefault<User>();
+                    return dbContext.Developers.Include("Credential").Where(d=> d.Credential.Email==email).FirstOrDefault<Developer>();
                 }
             }
             catch (Exception)
