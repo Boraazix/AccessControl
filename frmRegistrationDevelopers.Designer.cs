@@ -42,11 +42,13 @@
             this.lblBirth = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
+            this.btnTipLevel = new System.Windows.Forms.Button();
             this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
             // 
+            this.pnlMain.Controls.Add(this.btnTipLevel);
             this.pnlMain.Controls.Add(this.btnRegister);
             this.pnlMain.Controls.Add(this.txtPassword);
             this.pnlMain.Controls.Add(this.lblPassword);
@@ -62,22 +64,22 @@
             this.pnlMain.Controls.Add(this.lblName);
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(412, 145);
+            this.pnlMain.Size = new System.Drawing.Size(431, 145);
             this.pnlMain.TabIndex = 0;
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(270, 108);
+            this.btnRegister.Location = new System.Drawing.Point(292, 109);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(125, 21);
-            this.btnRegister.TabIndex = 8;
+            this.btnRegister.TabIndex = 9;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(231, 66);
+            this.txtPassword.Location = new System.Drawing.Point(253, 66);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(164, 20);
             this.txtPassword.TabIndex = 4;
@@ -85,7 +87,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(228, 50);
+            this.lblPassword.Location = new System.Drawing.Point(250, 50);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(56, 13);
             this.lblPassword.TabIndex = 14;
@@ -95,7 +97,7 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(15, 66);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(198, 20);
+            this.txtEmail.Size = new System.Drawing.Size(223, 20);
             this.txtEmail.TabIndex = 3;
             // 
             // lblEmail
@@ -110,10 +112,10 @@
             // chkAdministrator
             // 
             this.chkAdministrator.AutoSize = true;
-            this.chkAdministrator.Location = new System.Drawing.Point(177, 110);
+            this.chkAdministrator.Location = new System.Drawing.Point(199, 111);
             this.chkAdministrator.Name = "chkAdministrator";
             this.chkAdministrator.Size = new System.Drawing.Size(86, 17);
-            this.chkAdministrator.TabIndex = 7;
+            this.chkAdministrator.TabIndex = 8;
             this.chkAdministrator.Text = "Administrator";
             this.chkAdministrator.UseVisualStyleBackColor = true;
             // 
@@ -122,10 +124,10 @@
             this.chkActive.AutoSize = true;
             this.chkActive.Checked = true;
             this.chkActive.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkActive.Location = new System.Drawing.Point(115, 110);
+            this.chkActive.Location = new System.Drawing.Point(137, 111);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(56, 17);
-            this.chkActive.TabIndex = 6;
+            this.chkActive.TabIndex = 7;
             this.chkActive.Text = "Active";
             this.chkActive.UseVisualStyleBackColor = true;
             // 
@@ -149,7 +151,7 @@
             // dtpBirth
             // 
             this.dtpBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBirth.Location = new System.Drawing.Point(270, 25);
+            this.dtpBirth.Location = new System.Drawing.Point(292, 25);
             this.dtpBirth.Name = "dtpBirth";
             this.dtpBirth.Size = new System.Drawing.Size(125, 20);
             this.dtpBirth.TabIndex = 2;
@@ -157,7 +159,7 @@
             // lblBirth
             // 
             this.lblBirth.AutoSize = true;
-            this.lblBirth.Location = new System.Drawing.Point(267, 9);
+            this.lblBirth.Location = new System.Drawing.Point(289, 9);
             this.lblBirth.Name = "lblBirth";
             this.lblBirth.Size = new System.Drawing.Size(55, 13);
             this.lblBirth.TabIndex = 2;
@@ -167,7 +169,7 @@
             // 
             this.txtName.Location = new System.Drawing.Point(15, 25);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(237, 20);
+            this.txtName.Size = new System.Drawing.Size(259, 20);
             this.txtName.TabIndex = 1;
             // 
             // lblName
@@ -179,12 +181,23 @@
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name:";
             // 
+            // btnTipLevel
+            // 
+            this.btnTipLevel.Location = new System.Drawing.Point(106, 109);
+            this.btnTipLevel.Name = "btnTipLevel";
+            this.btnTipLevel.Size = new System.Drawing.Size(19, 20);
+            this.btnTipLevel.TabIndex = 6;
+            this.btnTipLevel.Text = "?";
+            this.btnTipLevel.UseVisualStyleBackColor = true;
+            this.btnTipLevel.Click += new System.EventHandler(this.btnTipLevel_Click);
+            // 
             // frmRegistrationDevelopers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 145);
+            this.ClientSize = new System.Drawing.Size(431, 145);
             this.Controls.Add(this.pnlMain);
+            this.MaximizeBox = false;
             this.Name = "frmRegistrationDevelopers";
             this.Text = "Developer Registration";
             this.pnlMain.ResumeLayout(false);
@@ -209,5 +222,6 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Button btnTipLevel;
     }
 }

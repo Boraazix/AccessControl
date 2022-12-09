@@ -16,7 +16,15 @@ namespace AccessControl
         [StringLength(45)]
         public string Name { get; set; }
         public DateTime Birth { get; set; }
-        public Char Level { get; set; }
+        public char Level { get; set; }
+
+        [Column("Level", TypeName = "char")]
+        [MaxLength(1)]
+        public string LevelString
+        {
+            get { return Level.ToString(); }
+            set { Level = value[0]; }
+        }
         public Credential Credential { get; set; }
         public Developer() { }
         public Developer(string name)

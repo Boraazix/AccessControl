@@ -25,7 +25,26 @@ namespace AccessControl
         public frmMain()
         {
             InitializeComponent();
+            if (Repository.DeveloperLogged.Credential.Administrator 
+                || Repository.DeveloperLogged.Level==Convert.ToChar("A"))
+            {
+                mnuDevelopers.Enabled = true;
+                mnuProjects.Enabled = true;
+            }
+            else
+            {
+                mnuDevelopers.Enabled = false;
+                mnuProjects.Enabled = false;
+            }
         }
+        private void AllowingDeveloper()
+        {
+            if(Repository.DeveloperLogged.Credential.Administrator)
+            {
+            }
+            
+        }
+
         private void mnuBack_Click(Object sender, EventArgs e)
         {
             frmLogIn.GetInstance().Show();
@@ -44,7 +63,7 @@ namespace AccessControl
 
         private void mnuDevelopers_Click(object sender, EventArgs e)
         {
-
+            frmRegistrationDevelopers.GetInstance().Show();
         }
 
         private void mnuProjects_Click(object sender, EventArgs e)

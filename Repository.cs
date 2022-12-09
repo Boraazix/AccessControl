@@ -12,6 +12,7 @@ namespace AccessControl
     public class Repository : DbContext
     {
         private static MySqlConnection _databaseConnection;
+        public static Developer DeveloperLogged { get; set; }
         public DbSet<Developer> Developers { get; set; }
         public DbSet<Project> Projects { get; set; }
         public Repository() : base(GetDbConnection(), false)

@@ -67,6 +67,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(164, 20);
             this.txtPassword.TabIndex = 5;
+            this.txtPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyUp);
             // 
             // txtEmail
             // 

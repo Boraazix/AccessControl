@@ -30,7 +30,7 @@ namespace AccessControl
             InitializeComponent();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lklblKumon_LinkCLicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             lklblKumon.LinkVisited = true;
             System.Diagnostics.Process.Start("https://www.kumon.com.br/");

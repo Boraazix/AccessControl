@@ -117,6 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="lblText.Text" xml:space="preserve">
+    <value>System made by Russell Edward Timóteo Torres.
+
+Hey, I'm Russell and i'm 17 years old.
+I have always been interested in exact sciences, in music, e-games and in the functioning of
+new technologies.
+In Mathematics Kumon, I was a Silver medal (2015-2016) and Gold medal (2017), when
+I also received the 'Liga I'  trophy.
+I've been assisting with sound design in my church for about 5 years, and more recently I've
+coordinated the transmission of live streams.
+At the age of 15, I started working at Internews in the QA area, in Web and Desktop systems.
+Upon entering the IFNMG I had to stop work due to full-time classes, and currently, I do
+Computer Technician.</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pcbMain.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1562,7 +1579,7 @@
         d/l4q/a3aNIwJYjFFFAXP//Z
 </value>
   </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
 </root>

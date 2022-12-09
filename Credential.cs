@@ -79,7 +79,7 @@ namespace AccessControl
             Active= active;
             Administrator = adm;
         }
-        public static bool ValidateDev(string email, string passwordWR)
+        public static Developer ValidateDev(string email, string passwordWR)
         {
             Developer dev = DeveloperRepository.FindByEmail(email);
             if (dev != null)
@@ -90,18 +90,18 @@ namespace AccessControl
                 passwordWR = ComputeSHA256(ComputeSHA256(passwordWR, SALT), SALT);
                 if (passwordDB == passwordWR)
                 {
-                    return true;
+                    return dev;
                 }
                 else
                 {
                     MessageBox.Show("This password is incorrect, please try again", "PASSWORD WRONG", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return false;
+                    return null;
                 }
             }
             else
             {
                 MessageBox.Show("This email is incorrect, please try again", "EMAIL WRONG", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
+                return null;
             }
         }
         public override string ToString()
