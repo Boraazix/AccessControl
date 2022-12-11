@@ -36,25 +36,35 @@
             this.lklblInternews = new System.Windows.Forms.LinkLabel();
             this.lklblKumon = new System.Windows.Forms.LinkLabel();
             this.lblText = new System.Windows.Forms.Label();
-            this.pcbMain = new System.Windows.Forms.PictureBox();
-            this.lblTexto = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pcbGmail = new System.Windows.Forms.PictureBox();
+            this.pcbTwitter = new System.Windows.Forms.PictureBox();
+            this.pcbLinkedIn = new System.Windows.Forms.PictureBox();
+            this.pcbGitHub = new System.Windows.Forms.PictureBox();
+            this.pcbMain = new System.Windows.Forms.PictureBox();
             this.pnlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbGmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbTwitter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLinkedIn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbGitHub)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMain)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
             // 
+            this.pnlMain.Controls.Add(this.pcbMain);
+            this.pnlMain.Controls.Add(this.pcbGitHub);
+            this.pnlMain.Controls.Add(this.pcbLinkedIn);
+            this.pnlMain.Controls.Add(this.pcbTwitter);
+            this.pnlMain.Controls.Add(this.pcbGmail);
             this.pnlMain.Controls.Add(this.lklblLigaI);
             this.pnlMain.Controls.Add(this.lklblIFNMG);
             this.pnlMain.Controls.Add(this.lklblInternews);
             this.pnlMain.Controls.Add(this.lklblKumon);
             this.pnlMain.Controls.Add(this.lblText);
-            this.pnlMain.Controls.Add(this.pcbMain);
-            this.pnlMain.Controls.Add(this.lblTexto);
-            this.pnlMain.Location = new System.Drawing.Point(-1, 0);
+            this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(489, 377);
+            this.pnlMain.Size = new System.Drawing.Size(468, 403);
             this.pnlMain.TabIndex = 1;
             // 
             // lklblLigaI
@@ -62,7 +72,7 @@
             this.lklblLigaI.ActiveLinkColor = System.Drawing.Color.Black;
             this.lklblLigaI.AutoSize = true;
             this.lklblLigaI.LinkColor = System.Drawing.Color.Black;
-            this.lklblLigaI.Location = new System.Drawing.Point(112, 289);
+            this.lklblLigaI.Location = new System.Drawing.Point(102, 277);
             this.lklblLigaI.Name = "lklblLigaI";
             this.lklblLigaI.Size = new System.Drawing.Size(37, 13);
             this.lklblLigaI.TabIndex = 13;
@@ -74,7 +84,7 @@
             // lklblIFNMG
             // 
             this.lklblIFNMG.AutoSize = true;
-            this.lklblIFNMG.Location = new System.Drawing.Point(112, 342);
+            this.lklblIFNMG.Location = new System.Drawing.Point(102, 330);
             this.lklblIFNMG.Name = "lklblIFNMG";
             this.lklblIFNMG.Size = new System.Drawing.Size(41, 13);
             this.lklblIFNMG.TabIndex = 12;
@@ -85,7 +95,7 @@
             // lklblInternews
             // 
             this.lklblInternews.AutoSize = true;
-            this.lklblInternews.Location = new System.Drawing.Point(196, 328);
+            this.lklblInternews.Location = new System.Drawing.Point(186, 316);
             this.lklblInternews.Name = "lklblInternews";
             this.lklblInternews.Size = new System.Drawing.Size(53, 13);
             this.lklblInternews.TabIndex = 11;
@@ -97,7 +107,7 @@
             // 
             this.lklblKumon.AutoSize = true;
             this.lklblKumon.BackColor = System.Drawing.Color.Transparent;
-            this.lklblKumon.Location = new System.Drawing.Point(98, 276);
+            this.lklblKumon.Location = new System.Drawing.Point(88, 264);
             this.lklblKumon.Name = "lklblKumon";
             this.lklblKumon.Size = new System.Drawing.Size(40, 13);
             this.lklblKumon.TabIndex = 10;
@@ -108,46 +118,85 @@
             // lblText
             // 
             this.lblText.AutoSize = true;
-            this.lblText.Location = new System.Drawing.Point(22, 211);
+            this.lblText.Location = new System.Drawing.Point(12, 199);
             this.lblText.Name = "lblText";
             this.lblText.Size = new System.Drawing.Size(446, 156);
             this.lblText.TabIndex = 9;
             this.lblText.Text = resources.GetString("lblText.Text");
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.ToolTipTitle = "Liga I";
+            // 
+            // pcbGmail
+            // 
+            this.pcbGmail.Image = ((System.Drawing.Image)(resources.GetObject("pcbGmail.Image")));
+            this.pcbGmail.Location = new System.Drawing.Point(29, 361);
+            this.pcbGmail.Name = "pcbGmail";
+            this.pcbGmail.Size = new System.Drawing.Size(85, 30);
+            this.pcbGmail.TabIndex = 14;
+            this.pcbGmail.TabStop = false;
+            this.pcbGmail.Click += new System.EventHandler(this.pcbGmail_Click);
+            // 
+            // pcbTwitter
+            // 
+            this.pcbTwitter.Image = ((System.Drawing.Image)(resources.GetObject("pcbTwitter.Image")));
+            this.pcbTwitter.Location = new System.Drawing.Point(120, 361);
+            this.pcbTwitter.Name = "pcbTwitter";
+            this.pcbTwitter.Size = new System.Drawing.Size(102, 30);
+            this.pcbTwitter.TabIndex = 15;
+            this.pcbTwitter.TabStop = false;
+            this.pcbTwitter.Click += new System.EventHandler(this.pcbTwitter_Click);
+            // 
+            // pcbLinkedIn
+            // 
+            this.pcbLinkedIn.Image = ((System.Drawing.Image)(resources.GetObject("pcbLinkedIn.Image")));
+            this.pcbLinkedIn.Location = new System.Drawing.Point(228, 361);
+            this.pcbLinkedIn.Name = "pcbLinkedIn";
+            this.pcbLinkedIn.Size = new System.Drawing.Size(109, 30);
+            this.pcbLinkedIn.TabIndex = 16;
+            this.pcbLinkedIn.TabStop = false;
+            this.pcbLinkedIn.Click += new System.EventHandler(this.pcbLinkedIn_Click);
+            // 
+            // pcbGitHub
+            // 
+            this.pcbGitHub.Image = ((System.Drawing.Image)(resources.GetObject("pcbGitHub.Image")));
+            this.pcbGitHub.Location = new System.Drawing.Point(343, 361);
+            this.pcbGitHub.Name = "pcbGitHub";
+            this.pcbGitHub.Size = new System.Drawing.Size(94, 30);
+            this.pcbGitHub.TabIndex = 17;
+            this.pcbGitHub.TabStop = false;
+            this.pcbGitHub.Click += new System.EventHandler(this.pcbGitHub_Click);
             // 
             // pcbMain
             // 
             this.pcbMain.ErrorImage = null;
             this.pcbMain.Image = ((System.Drawing.Image)(resources.GetObject("pcbMain.Image")));
             this.pcbMain.InitialImage = null;
-            this.pcbMain.Location = new System.Drawing.Point(148, 13);
+            this.pcbMain.Location = new System.Drawing.Point(146, 12);
             this.pcbMain.Name = "pcbMain";
             this.pcbMain.Size = new System.Drawing.Size(193, 184);
             this.pcbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbMain.TabIndex = 7;
+            this.pcbMain.TabIndex = 18;
             this.pcbMain.TabStop = false;
-            // 
-            // lblTexto
-            // 
-            this.lblTexto.Location = new System.Drawing.Point(0, 0);
-            this.lblTexto.Name = "lblTexto";
-            this.lblTexto.Size = new System.Drawing.Size(100, 23);
-            this.lblTexto.TabIndex = 8;
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.ToolTipTitle = "Liga I";
             // 
             // frmAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 376);
+            this.ClientSize = new System.Drawing.Size(468, 403);
             this.Controls.Add(this.pnlMain);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(484, 442);
+            this.MinimumSize = new System.Drawing.Size(484, 442);
             this.Name = "frmAbout";
             this.Text = "About";
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbGmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbTwitter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLinkedIn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbGitHub)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMain)).EndInit();
             this.ResumeLayout(false);
 
@@ -155,13 +204,16 @@
 
         #endregion
         private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.Label lblTexto;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.PictureBox pcbMain;
         private System.Windows.Forms.LinkLabel lklblLigaI;
         private System.Windows.Forms.LinkLabel lklblIFNMG;
         private System.Windows.Forms.LinkLabel lklblInternews;
         private System.Windows.Forms.LinkLabel lklblKumon;
         private System.Windows.Forms.Label lblText;
+        private System.Windows.Forms.PictureBox pcbMain;
+        private System.Windows.Forms.PictureBox pcbGitHub;
+        private System.Windows.Forms.PictureBox pcbLinkedIn;
+        private System.Windows.Forms.PictureBox pcbTwitter;
+        private System.Windows.Forms.PictureBox pcbGmail;
     }
 }

@@ -35,8 +35,11 @@ namespace AccessControl
             options.Add(Convert.ToChar("D"));
             cmbLevel.DataSource = options;
             btnSaveChanges.Enabled = false;
-
-            lstDevelopers.DataSource = DeveloperRepository.FindAll();
+            try
+            {
+                lstDevelopers.DataSource = DeveloperRepository.FindAll();
+            }
+            catch (Exception) { throw; }
         }
         private void ClearFields()
         {
@@ -47,48 +50,48 @@ namespace AccessControl
         }
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (txtName.Text == "")
+            try
             {
-                MessageBox.Show("Developer's name not entered!", "WITHOUT NAME", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtName.Focus();
-            }
-            else if (txtEmail.Text == "")
-            {
-                MessageBox.Show("Developer's email not entered!", "WITHOUT EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtEmail.Focus();
-            }
-            else if (txtPassword.Text == "")
-            {
-                MessageBox.Show("Password not entered!", "WITHOUT PASSWORD", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtPassword.Focus();
-            }
-            else if (txtName.Text.Length > 45)
-            {
-                MessageBox.Show("The developer's name can be a maximum of 45 characters!", "NAME LARGER THAN MAXIMUM", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtName.Focus();
-                txtName.SelectAll();
-            }
-            else if (txtEmail.Text.Length > 250)
-            {
-                MessageBox.Show("The developer's email can be a maximum of 250 characters!", "EMAIL LARGER THAN MAXIMUM", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtEmail.Focus();
-                txtEmail.SelectAll();
-            }
-            else if (txtPassword.Text.Length < 8 || txtPassword.Text.Length > 12)
-            {
-                MessageBox.Show("The password must be between 8 and 12 characters!", "PASSWORD OUT OF RANGE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtPassword.Focus();
-                txtPassword.SelectAll();
-            }
-            else if (DeveloperRepository.FindByEmail(txtEmail.Text) != null)
-            {
-                MessageBox.Show("This email is already registered!", "EMAIL ALREADY REGISTERED", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtEmail.Focus();
-                txtEmail.SelectAll();
-            }
-            else
-            {
-                try
+                if (txtName.Text == "")
+                {
+                    MessageBox.Show("Developer name not entered!", "WITHOUT NAME", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtName.Focus();
+                }
+                else if (txtEmail.Text == "")
+                {
+                    MessageBox.Show("Developer email not entered!", "WITHOUT EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtEmail.Focus();
+                }
+                else if (txtPassword.Text == "")
+                {
+                    MessageBox.Show("Password not entered!", "WITHOUT PASSWORD", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtPassword.Focus();
+                }
+                else if (txtName.Text.Length > 45)
+                {
+                    MessageBox.Show("The developer name can be a maximum of 45 characters!", "NAME LARGER THAN MAXIMUM", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtName.Focus();
+                    txtName.SelectAll();
+                }
+                else if (txtEmail.Text.Length > 250)
+                {
+                    MessageBox.Show("The developer email can be a maximum of 250 characters!", "EMAIL LARGER THAN MAXIMUM", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtEmail.Focus();
+                    txtEmail.SelectAll();
+                }
+                else if (txtPassword.Text.Length < 8 || txtPassword.Text.Length > 12)
+                {
+                    MessageBox.Show("The password must be between 8 and 12 characters!", "PASSWORD OUT OF RANGE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtPassword.Focus();
+                    txtPassword.SelectAll();
+                }
+                else if (DeveloperRepository.FindByEmail(txtEmail.Text) != null)
+                {
+                    MessageBox.Show("This email is already registered!", "EMAIL ALREADY REGISTERED", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtEmail.Focus();
+                    txtEmail.SelectAll();
+                }
+                else
                 {
                     Credential cr = new Credential(txtEmail.Text, txtPassword.Text, chkActive.Checked, chkAdministrator.Checked);
                     Developer dev = new Developer(txtName.Text, dtpBirth.Value.Date, Convert.ToChar(cmbLevel.Text), cr);
@@ -100,11 +103,8 @@ namespace AccessControl
 
                     ClearFields();
                 }
-                catch (Exception)
-                {
-                    throw;
-                }
             }
+            catch (Exception) { throw; }
         }
 
         private void btnTipLevel_Click(object sender, EventArgs e)
@@ -142,39 +142,39 @@ namespace AccessControl
         private void btnSave_Click(object sender, EventArgs e)
         {
             Developer dev = (Developer)lstDevelopers.SelectedItem;
-            if (!txtPassword.Enabled)
+            try
             {
-                if (txtName.Text == "")
+                if (!txtPassword.Enabled)
                 {
-                    MessageBox.Show("Name not entered!", "WITHOUT NAME", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtName.Focus();
-                }
-                else if (txtEmail.Text == "")
-                {
-                    MessageBox.Show("Email not entered!", "WITHOUT EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtEmail.Focus();
-                }
-                else if (txtName.Text.Length > 45)
-                {
-                    MessageBox.Show("The name can be a maximum of 45 characters!", "NAME LARGER THAN MAXIMUM", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtName.Focus();
-                    txtName.SelectAll();
-                }
-                else if (txtEmail.Text.Length > 250)
-                {
-                    MessageBox.Show("The email can be a maximum of 250 characters!", "EMAIL LARGER THAN MAXIMUM", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtEmail.Focus();
-                    txtEmail.SelectAll();
-                }
-                else if (dev.Credential.Email!=txtEmail.Text && DeveloperRepository.FindByEmail(txtEmail.Text) != null)
-                {
-                    MessageBox.Show("This email is from another developer!", "EMAIL ALREADY REGISTERED", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtEmail.Focus();
-                    txtEmail.SelectAll();
-                }
-                else
-                {
-                    try
+                    if (txtName.Text == "")
+                    {
+                        MessageBox.Show("Name not entered!", "WITHOUT NAME", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtName.Focus();
+                    }
+                    else if (txtEmail.Text == "")
+                    {
+                        MessageBox.Show("Email not entered!", "WITHOUT EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtEmail.Focus();
+                    }
+                    else if (txtName.Text.Length > 45)
+                    {
+                        MessageBox.Show("The name can be a maximum of 45 characters!", "NAME LARGER THAN MAXIMUM", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtName.Focus();
+                        txtName.SelectAll();
+                    }
+                    else if (txtEmail.Text.Length > 250)
+                    {
+                        MessageBox.Show("The email can be a maximum of 250 characters!", "EMAIL LARGER THAN MAXIMUM", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtEmail.Focus();
+                        txtEmail.SelectAll();
+                    }
+                    else if (dev.Credential.Email != txtEmail.Text && DeveloperRepository.FindByEmail(txtEmail.Text) != null)
+                    {
+                        MessageBox.Show("This email is from another developer!", "EMAIL ALREADY REGISTERED", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtEmail.Focus();
+                        txtEmail.SelectAll();
+                    }
+                    else
                     {
                         dev.Credential.Email = txtEmail.Text; dev.Credential.Active = chkActive.Checked;
                         dev.Credential.Administrator = chkAdministrator.Checked;
@@ -192,45 +192,42 @@ namespace AccessControl
 
                         txtPassword.Enabled = true; lstDevelopers.Enabled = true;
                         btnRegister.Enabled = true; btnDeleteDeveloper.Enabled = true;
-                        btnEditDeveloper.Enabled = true; btnChangePassword.Enabled = true; 
+                        btnEditDeveloper.Enabled = true; btnChangePassword.Enabled = true;
                         btnSaveChanges.Enabled = false;
-                        
                     }
-                    catch (Exception)
-                    {
-                        throw;
-                    }
-                }
-            }
-            else
-            {
-                if (txtPassword.Text == "")
-                {
-                    MessageBox.Show("Password not entered!", "WITHOUT PASSWORD", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtPassword.Focus();
-                }
-                else if (txtPassword.Text.Length < 8 || txtPassword.Text.Length > 12)
-                {
-                    MessageBox.Show("The password must be between 8 and 12 characters!", "PASSWORD OUT OF RANGE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtPassword.Focus();
-                    txtPassword.SelectAll();
                 }
                 else
                 {
-                    dev.Credential.Password = txtPassword.Text;
-                    DeveloperRepository.Save(dev);
-                    MessageBox.Show("Password successfully updated.", "SUCCESSFULLY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (txtPassword.Text == "")
+                    {
+                        MessageBox.Show("Password not entered!", "WITHOUT PASSWORD", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtPassword.Focus();
+                    }
+                    else if (txtPassword.Text.Length < 8 || txtPassword.Text.Length > 12)
+                    {
+                        MessageBox.Show("The password must be between 8 and 12 characters!", "PASSWORD OUT OF RANGE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtPassword.Focus();
+                        txtPassword.SelectAll();
+                    }
+                    else
+                    {
+                        dev.Credential.Password = txtPassword.Text;
+                        DeveloperRepository.Save(dev);
+                        MessageBox.Show("Password successfully updated.", "SUCCESSFULLY", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    ClearFields();
+                        ClearFields();
 
-                    txtName.Enabled = true; dtpBirth.Enabled = true; txtEmail.Enabled = true;
-                    cmbLevel.Enabled = true; btnTipLevel.Enabled = true; chkActive.Enabled = true;
-                    chkAdministrator.Enabled = true; lstDevelopers.Enabled = true;
-                    btnEditDeveloper.Enabled = true; btnDeleteDeveloper.Enabled = true;
-                    btnChangePassword.Enabled = true; btnRegister.Enabled = true;
-                    btnSaveChanges.Enabled = false;
-                }
+                        txtName.Enabled = true; dtpBirth.Enabled = true; txtEmail.Enabled = true;
+                        cmbLevel.Enabled = true; btnTipLevel.Enabled = true; chkActive.Enabled = true;
+                        chkAdministrator.Enabled = true; lstDevelopers.Enabled = true;
+                        btnEditDeveloper.Enabled = true; btnDeleteDeveloper.Enabled = true;
+                        btnChangePassword.Enabled = true; btnRegister.Enabled = true;
+                        btnSaveChanges.Enabled = false;
+                    }
+
+                }   
             }
+            catch (Exception) { throw; }
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)

@@ -68,7 +68,7 @@ namespace AccessControl
 
         private void mnuProjects_Click(object sender, EventArgs e)
         {
-
+            frmRegistrationProjects.GetInstance().Show();
         }
     }
 }

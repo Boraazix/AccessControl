@@ -18,18 +18,16 @@ namespace AccessControl
         public DateTime PlannedFinish { get; set; }
         public DateTime Finish { get; set; }
         public Project() { }
-        public Project(string name, DateTime start, DateTime pfinished)
-        {
-            Name= name;
-            Start = start;
-            PlannedFinish= pfinished;
-        }
         public Project(string name, DateTime start, DateTime pfinished, DateTime finished)
         {
             Name = name;
             Start = start;
             PlannedFinish = pfinished;
             Finish = finished;
+        }
+        public override string ToString()
+        {
+            return Id+": "+(Name.Length>24?Name.Substring(0,24):Name)+", S.:"+Start.ToString("dd/MM/yyyy")+", P.F.:"+PlannedFinish.Date.ToString("dd/MM/yyyy");
         }
     }
 }

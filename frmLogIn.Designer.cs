@@ -103,6 +103,8 @@
             this.ClientSize = new System.Drawing.Size(252, 97);
             this.Controls.Add(this.pnlMain);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(268, 136);
+            this.MinimumSize = new System.Drawing.Size(268, 136);
             this.Name = "frmLogIn";
             this.Text = "Access Control";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLogIn_FormClosed);

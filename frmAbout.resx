@@ -134,7 +134,58 @@ At the age of 15, I started working at Internews in the QA area, in Web and Desk
 Upon entering the IFNMG I had to stop work due to full-time classes, and currently, I do
 Computer Technician.</value>
   </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pcbGmail.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFMAAAAcCAMAAAAqYnOLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAA5UExURdFINv3z8t13auCDd/fc2dRVRP75+P////XTzuqro+yzq+eelPrn5dZeTuONgvHFv9lq
+        W9ptX9NQPkA6QtwAAAD9SURBVEhL7ZPZbsMgEEVn2IY9bv7/Y3sHSNo0ebCaPCSSj2T72oIDA5gODj6C
+        5lcAvq3wJMxmJbLMKz2JiKSZEuJMwMQQXCfKEs7kw2zDcsLdi8P4l16PkOrEbUQbHvXqNBJyOcGQRTqV
+        Oa4R4fMuZ8QEuXdGo3h1RrG4Y6mz1EgYTA1Zkn7e5STDmAGW9ccZkLwfziIdlxrYeS1+n5N8jLr9t84g
+        QZ1fNTijBiO5OV3dfc7Fbe2mTmeRMpxYWmD/7Rx7xNPZih9OrtZ2FL+cLqWyWv/lsVPPEkf0gVPf4ETp
+        SCh+OUEdTe/h384XnfmGs3lhe9G/eXDwbhB9AxHyCEiKLg7SAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="pcbTwitter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAGQAAAAcCAMAAACgTerKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAA2UExURR2h8jis9N3y/lG39ZDR+V+99qHY+v///yak8tfv/YLL+JfU+fH6/7Hf+2/D98fo/Ob1
+        /rrj+/8UNMYAAAEhSURBVEhL7ZLZjsMwCEVxTIK3ePn/nx3ATqeRYo00at98HkJqKJdLDIvF4h+EEp0z
+        48en2U8NJxGlavX98wQqMj9rMLmf8aGyG2rgiBzPYOCgHVpPvArAS+DZOCZt9Ijhopat1BKOM7AYKSEa
+        qAk4ZaFWUJGMJ3nE3wJPUQJHbNSX8oAt2l95iQDPv0lgB6FuQRypCK+XDklcBZ5tjmjI6+sD4uRCmgxG
+        j0D5ZHYKUxGGdTyZPDJPhKQCTBonwuhh6dhCqFHWPhGJMaoIke+mnjA6jPC2rasHB7KWH/z/P9aVm9id
+        gcPKbaOjh0zo+H5Jbu5Eb5dzKc2tQO4at4pL5JD+RRvPvwnffHGEt128Y0pVDVns9zABC+avSiwWiwkA
+        P/iWC9U2MNhNAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="pcbLinkedIn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAGsAAAAcCAMAAABRRrFHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAA2UExURf///3S118Dd7Uyfy5bH4RKAus3l8QB3tVWkzovB3jWTxYG82un0+fT5/LLW6SGIvkKa
+        yNzs9cjHrIIAAAEfSURBVEhL7ZTZkoQgDEWDsogs4v//7NxoGKm27C5Lu5+8L2SBHAgoud/pYV3Xw7qu
+        jWWpkZXgrdpYQhFJ8Fa1rNHMQvo+yzR9lKAbyC+jpp6dZGCNq6socwjqnDNEKeaproBbYKllbVXLmpsr
+        k+Ari8I/a2AEQjaEgYtH31EErLK6t6xSrC6+N306Plc0wtJkTZM3/Jw0O8JKNL5jOdeFxcT+lxF6Yfmk
+        hEWRUTyV1uJgjXxUYWWbP7IKaTcdspSOlUXoHIes90jtWQOFT6zA849ZEzeHXRVx+1t+18Ps5nSahX1j
+        SWXxida3MaYEo+Z3byPDOM2C5oaF/q4sdBula3735vE9zCdZd6pltZLgrdqK/vLf+309rOt6WFfl3B+v
+        +EwoHsbCSQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="pcbGitHub.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFwAAAAcCAMAAADbaSgGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABRUExURRAAAPPz8+De3qagoMXBwWphYU1BQf///yESEtDNzY+IiF1TU5uVlbq2tn11dYiBgT0w
+        MPr6+ldMTLSvr3VsbGJYWC0fH3lwcOrp6TksLBYHB1uIfqcAAAEuSURBVEhL7ZRbc4MgFIQPNxdRosbE
+        2Pz/H9pzgLRTJW92ptPxe3CW2wILSCcnfxFnrDWuFI5l1EjosVQcyKiyN6AOd/cajbPDYF0D7UslUWOV
+        ajkpj5YoT29z4YYLUY8rfSASdcC0hjJoxwNYsmqAR1aip36IczHnqTEPrm4eHS+vDNtiv9bLe7BZSW3H
+        X25IfkQBdynXzPslcqEO0BdFBiiK1PQk7/fmiU0sHNhT+lQAePOZ+ae5wrQzX0OI3+Y8ssN8ndM2a3As
+        RW1jafTe/BXLBY7PhffcIbAw0qcCZ2FS6F5UqmLSga7vzUfo0ErUcqARg/SpsKhHy8uQWwO1uYq3t+Z0
+        10rL3ZLM17y6Gk4tDTfyRZQ5jsZpy0+TzX/l77IYNh9NeUsnJ/8Eok/S/A5KVwAKqAAAAABJRU5ErkJg
+        gg==
+</value>
+  </data>
   <data name="pcbMain.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsN
