@@ -51,11 +51,11 @@ namespace AccessControl
                     MessageBox.Show("Email not entered!", "WITHOUT EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else if (txtPassword.Text == "")
                     MessageBox.Show("Password not entered!", "WITHOUT PASSWORD", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                else if (Credential.ValidateDev(txtEmail.Text, txtPassword.Text) != null)
+                else if (Credential.ValidateDev(txtEmail.Text, txtPassword.Text))
                 {
-                    Repository.DeveloperLogged = Credential.ValidateDev(txtEmail.Text, txtPassword.Text);
                     MessageBox.Show($"Welcome {Repository.DeveloperLogged.Name}!", "LOG-IN CORRECT", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmMain.GetInstance().Show();
+                    txtEmail.Focus();
                     this.Hide();
                     txtEmail.Text = "";
                     txtPassword.Text = "";

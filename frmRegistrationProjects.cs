@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ControleAcesso
+namespace AccessControl
 {
     public partial class frmRegistrationProjects : Form
     {

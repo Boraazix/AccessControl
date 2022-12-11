@@ -1,4 +1,4 @@
-﻿namespace ControleAcesso
+﻿namespace AccessControl
 {
     partial class frmRegistrationProjects
     {

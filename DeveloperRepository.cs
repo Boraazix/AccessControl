@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace AccessControl
                     else
                     {
                         dbContext.Entry(dev).State = EntityState.Modified;
+                        dbContext.Entry(dev.Credential).State = EntityState.Modified;
                     }
                     dbContext.SaveChanges();
                 }

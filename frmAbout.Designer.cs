@@ -145,7 +145,7 @@
             this.Controls.Add(this.pnlMain);
             this.MaximizeBox = false;
             this.Name = "frmAbout";
-            this.Text = "Sobre";
+            this.Text = "About";
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMain)).EndInit();

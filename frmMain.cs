@@ -26,7 +26,7 @@ namespace AccessControl
         {
             InitializeComponent();
             if (Repository.DeveloperLogged.Credential.Administrator 
-                || Repository.DeveloperLogged.Level==Convert.ToChar("A"))
+                || Repository.DeveloperLogged.LevelMemory==Convert.ToChar("A"))
             {
                 mnuDevelopers.Enabled = true;
                 mnuProjects.Enabled = true;

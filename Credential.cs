@@ -30,13 +30,24 @@ namespace AccessControl
             }
             set
             {
-                _password = ComputeSHA256(value, SALT);
+                if(value.Length>=8 && value.Length<=12)
+                {
+                    _password = ComputeSHA256(value, SALT);
+                }
+                else if(value.Length==64)
+                {
+                    _password = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("Lenght is out of range.");
+                }
             }
         }
         public bool Active { get; set; }
         public bool Administrator { get; set; }
         [Required]
-        public Developer User { get; set; }
+        public Developer Developer { get; set; }
 
         #region Hashing
         public static String ComputeSHA256(String input)
@@ -72,6 +83,7 @@ namespace AccessControl
         }
         #endregion
         public Credential() { }
+        
         public Credential(String email, String password,bool active, bool adm)
         {
             Email= email;
@@ -79,36 +91,45 @@ namespace AccessControl
             Active= active;
             Administrator = adm;
         }
-        public static Developer ValidateDev(string email, string passwordWR)
+        public static bool ValidateDev(string email, string passwordWR)
         {
             Developer dev = DeveloperRepository.FindByEmail(email);
             if (dev != null)
             {
-                string passwordDB = dev.Credential.Password;
-                // the password is encrypted two times, when is saved on DB and when 
-                // is placed in a object. The entry of user need to be encrypted two times too.
-                passwordWR = ComputeSHA256(ComputeSHA256(passwordWR, SALT), SALT);
-                if (passwordDB == passwordWR)
+                if (!dev.Credential.Active)
                 {
-                    return dev;
+                    MessageBox.Show("This developer is inactive, needs to be activated at registration", "DEVELOPER INACTIVE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return false;
                 }
                 else
                 {
-                    MessageBox.Show("This password is incorrect, please try again", "PASSWORD WRONG", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return null;
+                    string passwordDB = dev.Credential.Password;
+                    // the password is encrypted two times, when is saved on DB and when 
+                    // is placed in a object. The entry of user need to be encrypted two times too.
+                    passwordWR = ComputeSHA256(passwordWR, SALT);
+                    if (passwordDB == passwordWR)
+                    {
+                        Repository.DeveloperLogged = dev;
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("This password is incorrect, please try again", "PASSWORD WRONG", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return false;
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("This email is incorrect, please try again", "EMAIL WRONG", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return null;
+                return false;
             }
         }
         public override string ToString()
         {
             return Id + ", " + Email + ", " + Password + ", " +
                 (Administrator ? "Administrador" : "Usuário Comum") +
-                (this.User == null ? "" : ", Usuário: " + User.Id) + ".";
+                (this.Developer == null ? "" : ", Usuário: " + Developer.Id) + ".";
         }
     }
 }

@@ -16,14 +16,14 @@ namespace AccessControl
         [StringLength(45)]
         public string Name { get; set; }
         public DateTime Birth { get; set; }
-        public char Level { get; set; }
+        public char LevelMemory { get; set; }
 
         [Column("Level", TypeName = "char")]
         [MaxLength(1)]
-        public string LevelString
+        public string LevelDB
         {
-            get { return Level.ToString(); }
-            set { Level = value[0]; }
+            get { return LevelMemory.ToString(); }
+            set { LevelMemory = value[0]; }
         }
         public Credential Credential { get; set; }
         public Developer() { }
@@ -35,13 +35,13 @@ namespace AccessControl
         {
             Name = name;
             Birth = birth;
-            Level = level;
+            LevelMemory = level;
             Credential = credential;
         }
 
         public override string ToString()
         {
-            return Id+", "+Name+(this.Credential==null ? ", Credencial: " + Credential.Id : "");
+            return Id+": "+(Name.Length>28?Name.Substring(0,28):Name)+" | "+(this.Credential.Active ? "Active" : "Inactive");
         }
     }
 }
