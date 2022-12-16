@@ -62,7 +62,7 @@
             // 
             // btnSaveChanges
             // 
-            this.btnSaveChanges.Location = new System.Drawing.Point(293, 296);
+            this.btnSaveChanges.Location = new System.Drawing.Point(292, 299);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.Size = new System.Drawing.Size(135, 21);
             this.btnSaveChanges.TabIndex = 10;
@@ -72,7 +72,7 @@
             // 
             // btnDeleteProject
             // 
-            this.btnDeleteProject.Location = new System.Drawing.Point(152, 296);
+            this.btnDeleteProject.Location = new System.Drawing.Point(151, 299);
             this.btnDeleteProject.Name = "btnDeleteProject";
             this.btnDeleteProject.Size = new System.Drawing.Size(135, 21);
             this.btnDeleteProject.TabIndex = 9;
@@ -83,7 +83,7 @@
             // btnEditProject
             // 
             this.btnEditProject.Enabled = false;
-            this.btnEditProject.Location = new System.Drawing.Point(12, 296);
+            this.btnEditProject.Location = new System.Drawing.Point(11, 299);
             this.btnEditProject.Name = "btnEditProject";
             this.btnEditProject.Size = new System.Drawing.Size(135, 21);
             this.btnEditProject.TabIndex = 8;
@@ -98,7 +98,7 @@
             this.lstProjects.ItemHeight = 15;
             this.lstProjects.Location = new System.Drawing.Point(12, 124);
             this.lstProjects.Name = "lstProjects";
-            this.lstProjects.Size = new System.Drawing.Size(416, 154);
+            this.lstProjects.Size = new System.Drawing.Size(416, 169);
             this.lstProjects.TabIndex = 2;
             // 
             // grpRegistration
@@ -187,6 +187,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(9, 31);
+            this.txtName.MaxLength = 35;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(202, 20);
             this.txtName.TabIndex = 1;

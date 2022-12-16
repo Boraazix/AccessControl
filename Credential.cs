@@ -40,7 +40,7 @@ namespace AccessControl
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException("Lenght is out of range.");
+                    throw new Exception("The password must be between 8 and 12 characters!");
                 }
             }
         }
@@ -90,40 +90,6 @@ namespace AccessControl
             Password= password;
             Active= active;
             Administrator = adm;
-        }
-        public static bool ValidateDev(string email, string passwordWR)
-        {
-            Developer dev = DeveloperRepository.FindByEmail(email);
-            if (dev != null)
-            {
-                if (!dev.Credential.Active)
-                {
-                    MessageBox.Show("This developer is inactive, needs to be activated at registration", "DEVELOPER INACTIVE", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return false;
-                }
-                else
-                {
-                    string passwordDB = dev.Credential.Password;
-                    // the password is encrypted two times, when is saved on DB and when 
-                    // is placed in a object. The entry of user need to be encrypted two times too.
-                    passwordWR = ComputeSHA256(passwordWR, SALT);
-                    if (passwordDB == passwordWR)
-                    {
-                        Repository.DeveloperLogged = dev;
-                        return true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("This password is incorrect, please try again", "PASSWORD WRONG", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        return false;
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("This email is incorrect, please try again", "EMAIL WRONG", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
         }
         public override string ToString()
         {

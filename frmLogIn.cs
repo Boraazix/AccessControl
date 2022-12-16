@@ -48,10 +48,10 @@ namespace AccessControl
             try
             {
                 if (txtEmail.Text == "")
-                    MessageBox.Show("Email not entered!", "WITHOUT EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Email not entered!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else if (txtPassword.Text == "")
-                    MessageBox.Show("Password not entered!", "WITHOUT PASSWORD", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                else if (Credential.ValidateDev(txtEmail.Text, txtPassword.Text))
+                    MessageBox.Show("Password not entered!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                else if (CredentialRepository.ValidateDev(txtEmail.Text, txtPassword.Text))
                 {
                     MessageBox.Show($"Welcome {Repository.DeveloperLogged.Name}!", "LOG-IN CORRECT", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmMain.GetInstance().Show();
@@ -63,8 +63,7 @@ namespace AccessControl
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                MessageBox.Show("Unable to connect to Database.", "CONNECTION ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

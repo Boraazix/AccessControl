@@ -28,13 +28,13 @@ namespace AccessControl
             if (Repository.DeveloperLogged.Credential.Administrator 
                 || Repository.DeveloperLogged.LevelMemory==Convert.ToChar("A"))
             {
-                mnuDevelopers.Enabled = true;
-                mnuProjects.Enabled = true;
+                mnuRegistrationDevelopers.Enabled = true;
+                mnuRegistrationProjects.Enabled = true;
             }
             else
             {
-                mnuDevelopers.Enabled = false;
-                mnuProjects.Enabled = false;
+                mnuRegistrationDevelopers.Enabled = false;
+                mnuRegistrationProjects.Enabled = false;
             }
         }
         private void AllowingDeveloper()

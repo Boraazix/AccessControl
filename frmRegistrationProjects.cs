@@ -52,14 +52,8 @@ namespace AccessControl
             {
                 if(txtName.Text=="")
                 {
-                    MessageBox.Show("Project name not entered!", "WITHOUT NAME", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Project name not entered!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtName.Focus();
-                }
-                else if (txtName.Text.Length>35)
-                {
-                    MessageBox.Show("The project name can be a maximum of 35 characters!", "NAME LARGER THAN MAXIMUM", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtName.Focus();
-                    txtName.SelectAll();
                 }
                 else
                 {
@@ -75,7 +69,10 @@ namespace AccessControl
                     ClearFields();
                 }
             }
-            catch(Exception) { }
+            catch(Exception ex) 
+            {
+                MessageBox.Show(ex.Message, "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void btnDeleteProject_Click(object sender, EventArgs e)
@@ -116,14 +113,8 @@ namespace AccessControl
             {
                 if (txtName.Text == "")
                 {
-                    MessageBox.Show("Name not entered!", "WITHOUT NAME", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Name not entered!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtName.Focus();
-                }
-                else if (txtName.Text.Length > 35)
-                {
-                    MessageBox.Show("The name can be a maximum of 35 characters!", "NAME LARGER THAN MAXIMUM", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtName.Focus();
-                    txtName.SelectAll();
                 }
                 else
                 {
@@ -144,7 +135,10 @@ namespace AccessControl
                     ClearFields();
                 }
             }
-            catch(Exception) { throw; }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

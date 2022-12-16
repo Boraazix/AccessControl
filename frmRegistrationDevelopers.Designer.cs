@@ -142,6 +142,7 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(247, 72);
+            this.txtPassword.MaxLength = 12;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(180, 20);
             this.txtPassword.TabIndex = 4;
@@ -178,6 +179,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(9, 31);
+            this.txtName.MaxLength = 45;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(259, 20);
             this.txtName.TabIndex = 1;
@@ -211,6 +213,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(9, 72);
+            this.txtEmail.MaxLength = 250;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(223, 20);
             this.txtEmail.TabIndex = 3;
