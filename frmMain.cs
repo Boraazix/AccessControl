@@ -37,14 +37,6 @@ namespace AccessControl
                 mnuRegistrationProjects.Enabled = false;
             }
         }
-        private void AllowingDeveloper()
-        {
-            if(Repository.DeveloperLogged.Credential.Administrator)
-            {
-            }
-            
-        }
-
         private void mnuBack_Click(Object sender, EventArgs e)
         {
             frmLogIn.GetInstance().Show();

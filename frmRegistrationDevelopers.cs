@@ -28,18 +28,23 @@ namespace AccessControl
         {
             InitializeComponent();
 
-            List<Char> options = new List<Char>();
-            options.Add(Convert.ToChar("A"));
-            options.Add(Convert.ToChar("B"));
-            options.Add(Convert.ToChar("C"));
-            options.Add(Convert.ToChar("D"));
+            List<Char> options = new List<Char>
+            {
+                Convert.ToChar("A"),
+                Convert.ToChar("B"),
+                Convert.ToChar("C"),
+                Convert.ToChar("D")
+            };
             cmbLevel.DataSource = options;
             btnSaveChanges.Enabled = false;
             try
             {
                 lstDevelopers.DataSource = DeveloperRepository.FindAll();
             }
-            catch (Exception) { throw; }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
         private void ClearFields()
         {

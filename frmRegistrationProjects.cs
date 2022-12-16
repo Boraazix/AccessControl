@@ -35,7 +35,10 @@ namespace AccessControl
                 if(lstProjects.Items.Count>0) 
                     btnEditProject.Enabled = true;
             }
-            catch (Exception) { throw; }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
         private void ClearFields()
         {
