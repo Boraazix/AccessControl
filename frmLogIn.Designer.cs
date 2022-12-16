@@ -67,6 +67,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(164, 20);
             this.txtPassword.TabIndex = 5;
+            this.txtPassword.Text = "jumanjis";
             this.txtPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyUp);
             // 
             // txtEmail
@@ -76,6 +77,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(164, 20);
             this.txtEmail.TabIndex = 4;
+            this.txtEmail.Text = "adm@gmail.com";
             // 
             // lblPassword
             // 

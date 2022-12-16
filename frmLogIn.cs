@@ -53,7 +53,7 @@ namespace AccessControl
                     MessageBox.Show("Password not entered!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else if (CredentialRepository.ValidateDev(txtEmail.Text, txtPassword.Text))
                 {
-                    MessageBox.Show($"Welcome {Repository.DeveloperLogged.Name}!", "LOG-IN CORRECT", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Welcome {frmMain.DeveloperLogged.Name}!", "LOG-IN CORRECT", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmMain.GetInstance().Show();
                     txtEmail.Focus();
                     this.Hide();

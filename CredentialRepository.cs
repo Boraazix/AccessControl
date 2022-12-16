@@ -31,7 +31,7 @@ namespace AccessControl
 
                         if (passwordDB == passwordWR)
                         {
-                            Repository.DeveloperLogged = dev;
+                            frmMain.DeveloperLogged = dev;
                             return true;
                         }
                         else

@@ -15,6 +15,14 @@ namespace AccessControl
         [Required]
         [StringLength(45)]
         public string Name { get; set; }
+        [NotMapped]
+        public string Email
+        {
+            get
+            {
+                return Credential.Email;
+            }
+        }
         public DateTime Birth { get; set; }
         public char LevelMemory { get; set; }
 
@@ -26,6 +34,28 @@ namespace AccessControl
             set { LevelMemory = value[0]; }
         }
         public Credential Credential { get; set; }
+        [NotMapped]
+        public string Active
+        {
+            get
+            {
+                if (Credential.Active)
+                    return "Yes";
+                else
+                    return "No";
+            }
+        }
+        [NotMapped]
+        public string Administrator
+        {
+            get
+            {
+                if (Credential.Administrator)
+                    return "Yes";
+                else
+                    return "No";
+            }
+        }
         public Developer() { }
         public Developer(string name)
         {

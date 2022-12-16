@@ -131,6 +131,18 @@
     <Compile Include="frmRegistrationProjects.Designer.cs">
       <DependentUpon>frmRegistrationProjects.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportDeveloper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportDeveloper.Designer.cs">
+      <DependentUpon>frmReportDeveloper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportProject.Designer.cs">
+      <DependentUpon>frmReportProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Project.cs" />
     <Compile Include="ProjectRepository.cs" />
     <Compile Include="Repository.cs" />
@@ -153,6 +165,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistrationProjects.resx">
       <DependentUpon>frmRegistrationProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportDeveloper.resx">
+      <DependentUpon>frmReportDeveloper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportProject.resx">
+      <DependentUpon>frmReportProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

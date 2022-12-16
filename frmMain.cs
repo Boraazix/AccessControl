@@ -1,4 +1,5 @@
 ﻿using AccessControl;
+using ControleAcesso;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,19 +23,18 @@ namespace AccessControl
             return _instance;
         }
         #endregion
+        public static Developer DeveloperLogged { get; set; }
         public frmMain()
         {
             InitializeComponent();
-            if (Repository.DeveloperLogged.Credential.Administrator 
-                || Repository.DeveloperLogged.LevelMemory==Convert.ToChar("A"))
+            if (DeveloperLogged.Credential.Administrator 
+                || DeveloperLogged.LevelMemory==Convert.ToChar("A"))
             {
-                mnuRegistrationDevelopers.Enabled = true;
-                mnuRegistrationProjects.Enabled = true;
+                mnuRegistration.Enabled = true;
             }
             else
             {
-                mnuRegistrationDevelopers.Enabled = false;
-                mnuRegistrationProjects.Enabled = false;
+                mnuRegistration.Enabled = false;
             }
         }
         private void mnuBack_Click(Object sender, EventArgs e)
@@ -61,6 +61,23 @@ namespace AccessControl
         private void mnuProjects_Click(object sender, EventArgs e)
         {
             frmRegistrationProjects.GetInstance().Show();
+        }
+
+        private void mnuReportDevelopers_Click(object sender, EventArgs e)
+        {
+            frmReportDeveloper.GetInstance().Show();
+        }
+
+        private void mnuReportProjects_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmReportProject.GetInstance().Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

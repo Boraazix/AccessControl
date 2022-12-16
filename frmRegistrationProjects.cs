@@ -61,7 +61,7 @@ namespace AccessControl
                 else
                 {
 
-                    Project project= new Project(txtName.Text, dtpStart.Value, dtpPlannedFinish.Value, dtpFinish.Value);
+                    Project project= new Project(txtName.Text, dtpStart.Value.Date, dtpPlannedFinish.Value.Date, dtpFinish.Value.Date);
                     ProjectRepository.Save(project);
                     lstProjects.DataSource= ProjectRepository.FindAll();
 

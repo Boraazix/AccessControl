@@ -32,7 +32,7 @@
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuRecord = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRegistration = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRegistrationDevelopers = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRegistrationProjects = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuReport = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +45,7 @@
             // 
             this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFile,
-            this.mnuRecord,
+            this.mnuRegistration,
             this.mnuReport});
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
@@ -76,14 +76,14 @@
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
-            // mnuRecord
+            // mnuRegistration
             // 
-            this.mnuRecord.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuRegistration.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuRegistrationDevelopers,
             this.mnuRegistrationProjects});
-            this.mnuRecord.Name = "mnuRecord";
-            this.mnuRecord.Size = new System.Drawing.Size(82, 20);
-            this.mnuRecord.Text = "Registration";
+            this.mnuRegistration.Name = "mnuRegistration";
+            this.mnuRegistration.Size = new System.Drawing.Size(82, 20);
+            this.mnuRegistration.Text = "Registration";
             // 
             // mnuRegistrationDevelopers
             // 
@@ -113,12 +113,14 @@
             this.mnuReportDevelopers.Name = "mnuReportDevelopers";
             this.mnuReportDevelopers.Size = new System.Drawing.Size(180, 22);
             this.mnuReportDevelopers.Text = "Developers";
+            this.mnuReportDevelopers.Click += new System.EventHandler(this.mnuReportDevelopers_Click);
             // 
             // mnuReportProjects
             // 
             this.mnuReportProjects.Name = "mnuReportProjects";
             this.mnuReportProjects.Size = new System.Drawing.Size(180, 22);
             this.mnuReportProjects.Text = "Projects";
+            this.mnuReportProjects.Click += new System.EventHandler(this.mnuReportProjects_Click);
             // 
             // frmMain
             // 
@@ -144,7 +146,7 @@
         private global::System.Windows.Forms.ToolStripMenuItem mnuFile;
         private global::System.Windows.Forms.ToolStripMenuItem mnuAbout;
         private global::System.Windows.Forms.ToolStripMenuItem mnuBack;
-        private global::System.Windows.Forms.ToolStripMenuItem mnuRecord;
+        private global::System.Windows.Forms.ToolStripMenuItem mnuRegistration;
         private global::System.Windows.Forms.ToolStripMenuItem mnuRegistrationDevelopers;
         private global::System.Windows.Forms.ToolStripMenuItem mnuRegistrationProjects;
         private System.Windows.Forms.ToolStripMenuItem mnuReport;
