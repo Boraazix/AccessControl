@@ -31,23 +31,23 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAbout));
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.pcbMain = new System.Windows.Forms.PictureBox();
+            this.pcbGitHub = new System.Windows.Forms.PictureBox();
+            this.pcbLinkedIn = new System.Windows.Forms.PictureBox();
+            this.pcbTwitter = new System.Windows.Forms.PictureBox();
+            this.pcbGmail = new System.Windows.Forms.PictureBox();
             this.lklblLigaI = new System.Windows.Forms.LinkLabel();
             this.lklblIFNMG = new System.Windows.Forms.LinkLabel();
             this.lklblInternews = new System.Windows.Forms.LinkLabel();
             this.lklblKumon = new System.Windows.Forms.LinkLabel();
             this.lblText = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pcbGmail = new System.Windows.Forms.PictureBox();
-            this.pcbTwitter = new System.Windows.Forms.PictureBox();
-            this.pcbLinkedIn = new System.Windows.Forms.PictureBox();
-            this.pcbGitHub = new System.Windows.Forms.PictureBox();
-            this.pcbMain = new System.Windows.Forms.PictureBox();
+            this.ttLigaI = new System.Windows.Forms.ToolTip(this.components);
             this.pnlMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbGmail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbTwitter)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLinkedIn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbGitHub)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbGitHub)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLinkedIn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbTwitter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbGmail)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -67,6 +67,58 @@
             this.pnlMain.Size = new System.Drawing.Size(468, 403);
             this.pnlMain.TabIndex = 1;
             // 
+            // pcbMain
+            // 
+            this.pcbMain.ErrorImage = null;
+            this.pcbMain.Image = ((System.Drawing.Image)(resources.GetObject("pcbMain.Image")));
+            this.pcbMain.InitialImage = null;
+            this.pcbMain.Location = new System.Drawing.Point(146, 12);
+            this.pcbMain.Name = "pcbMain";
+            this.pcbMain.Size = new System.Drawing.Size(193, 184);
+            this.pcbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbMain.TabIndex = 18;
+            this.pcbMain.TabStop = false;
+            // 
+            // pcbGitHub
+            // 
+            this.pcbGitHub.Image = ((System.Drawing.Image)(resources.GetObject("pcbGitHub.Image")));
+            this.pcbGitHub.Location = new System.Drawing.Point(343, 361);
+            this.pcbGitHub.Name = "pcbGitHub";
+            this.pcbGitHub.Size = new System.Drawing.Size(94, 30);
+            this.pcbGitHub.TabIndex = 17;
+            this.pcbGitHub.TabStop = false;
+            this.pcbGitHub.Click += new System.EventHandler(this.pcbGitHub_Click);
+            // 
+            // pcbLinkedIn
+            // 
+            this.pcbLinkedIn.Image = ((System.Drawing.Image)(resources.GetObject("pcbLinkedIn.Image")));
+            this.pcbLinkedIn.Location = new System.Drawing.Point(228, 361);
+            this.pcbLinkedIn.Name = "pcbLinkedIn";
+            this.pcbLinkedIn.Size = new System.Drawing.Size(109, 30);
+            this.pcbLinkedIn.TabIndex = 16;
+            this.pcbLinkedIn.TabStop = false;
+            this.pcbLinkedIn.Click += new System.EventHandler(this.pcbLinkedIn_Click);
+            // 
+            // pcbTwitter
+            // 
+            this.pcbTwitter.Image = ((System.Drawing.Image)(resources.GetObject("pcbTwitter.Image")));
+            this.pcbTwitter.Location = new System.Drawing.Point(120, 361);
+            this.pcbTwitter.Name = "pcbTwitter";
+            this.pcbTwitter.Size = new System.Drawing.Size(102, 30);
+            this.pcbTwitter.TabIndex = 15;
+            this.pcbTwitter.TabStop = false;
+            this.pcbTwitter.Click += new System.EventHandler(this.pcbTwitter_Click);
+            // 
+            // pcbGmail
+            // 
+            this.pcbGmail.Image = ((System.Drawing.Image)(resources.GetObject("pcbGmail.Image")));
+            this.pcbGmail.Location = new System.Drawing.Point(29, 361);
+            this.pcbGmail.Name = "pcbGmail";
+            this.pcbGmail.Size = new System.Drawing.Size(85, 30);
+            this.pcbGmail.TabIndex = 14;
+            this.pcbGmail.TabStop = false;
+            this.pcbGmail.Click += new System.EventHandler(this.pcbGmail_Click);
+            // 
             // lklblLigaI
             // 
             this.lklblLigaI.ActiveLinkColor = System.Drawing.Color.Black;
@@ -78,7 +130,7 @@
             this.lklblLigaI.TabIndex = 13;
             this.lklblLigaI.TabStop = true;
             this.lklblLigaI.Text = "\'Liga I\'";
-            this.toolTip1.SetToolTip(this.lklblLigaI, "Awards for those who reach subjects of the\r\nHigh School before the Middle School." +
+            this.ttLigaI.SetToolTip(this.lklblLigaI, "Awards for those who reach subjects of the\r\nHigh School before the Middle School." +
         "");
             // 
             // lklblIFNMG
@@ -124,61 +176,9 @@
             this.lblText.TabIndex = 9;
             this.lblText.Text = resources.GetString("lblText.Text");
             // 
-            // toolTip1
+            // ttLigaI
             // 
-            this.toolTip1.ToolTipTitle = "Liga I";
-            // 
-            // pcbGmail
-            // 
-            this.pcbGmail.Image = ((System.Drawing.Image)(resources.GetObject("pcbGmail.Image")));
-            this.pcbGmail.Location = new System.Drawing.Point(29, 361);
-            this.pcbGmail.Name = "pcbGmail";
-            this.pcbGmail.Size = new System.Drawing.Size(85, 30);
-            this.pcbGmail.TabIndex = 14;
-            this.pcbGmail.TabStop = false;
-            this.pcbGmail.Click += new System.EventHandler(this.pcbGmail_Click);
-            // 
-            // pcbTwitter
-            // 
-            this.pcbTwitter.Image = ((System.Drawing.Image)(resources.GetObject("pcbTwitter.Image")));
-            this.pcbTwitter.Location = new System.Drawing.Point(120, 361);
-            this.pcbTwitter.Name = "pcbTwitter";
-            this.pcbTwitter.Size = new System.Drawing.Size(102, 30);
-            this.pcbTwitter.TabIndex = 15;
-            this.pcbTwitter.TabStop = false;
-            this.pcbTwitter.Click += new System.EventHandler(this.pcbTwitter_Click);
-            // 
-            // pcbLinkedIn
-            // 
-            this.pcbLinkedIn.Image = ((System.Drawing.Image)(resources.GetObject("pcbLinkedIn.Image")));
-            this.pcbLinkedIn.Location = new System.Drawing.Point(228, 361);
-            this.pcbLinkedIn.Name = "pcbLinkedIn";
-            this.pcbLinkedIn.Size = new System.Drawing.Size(109, 30);
-            this.pcbLinkedIn.TabIndex = 16;
-            this.pcbLinkedIn.TabStop = false;
-            this.pcbLinkedIn.Click += new System.EventHandler(this.pcbLinkedIn_Click);
-            // 
-            // pcbGitHub
-            // 
-            this.pcbGitHub.Image = ((System.Drawing.Image)(resources.GetObject("pcbGitHub.Image")));
-            this.pcbGitHub.Location = new System.Drawing.Point(343, 361);
-            this.pcbGitHub.Name = "pcbGitHub";
-            this.pcbGitHub.Size = new System.Drawing.Size(94, 30);
-            this.pcbGitHub.TabIndex = 17;
-            this.pcbGitHub.TabStop = false;
-            this.pcbGitHub.Click += new System.EventHandler(this.pcbGitHub_Click);
-            // 
-            // pcbMain
-            // 
-            this.pcbMain.ErrorImage = null;
-            this.pcbMain.Image = ((System.Drawing.Image)(resources.GetObject("pcbMain.Image")));
-            this.pcbMain.InitialImage = null;
-            this.pcbMain.Location = new System.Drawing.Point(146, 12);
-            this.pcbMain.Name = "pcbMain";
-            this.pcbMain.Size = new System.Drawing.Size(193, 184);
-            this.pcbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbMain.TabIndex = 18;
-            this.pcbMain.TabStop = false;
+            this.ttLigaI.ToolTipTitle = "Liga I";
             // 
             // frmAbout
             // 
@@ -193,18 +193,18 @@
             this.Text = "About";
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbGmail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbTwitter)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLinkedIn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbGitHub)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbGitHub)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLinkedIn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbTwitter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbGmail)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip ttLigaI;
         private System.Windows.Forms.LinkLabel lklblLigaI;
         private System.Windows.Forms.LinkLabel lklblIFNMG;
         private System.Windows.Forms.LinkLabel lklblInternews;

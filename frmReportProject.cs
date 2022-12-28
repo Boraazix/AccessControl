@@ -1,4 +1,4 @@
-﻿using AccessControl;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ControleAcesso
+namespace AccessControl
 {
     public partial class frmReportProject : Form
     {

@@ -25,24 +25,6 @@ namespace AccessControl
         {
             InitializeComponent();
         }
-
-        private void btnAuthentic_Click(object sender, EventArgs e)
-        {
-            Authentic();
-        }
-
-        private void frmLogIn_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void txtPassword_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode== Keys.Enter)
-            {
-                Authentic();
-            }
-        }
         private void Authentic()
         {
             try
@@ -65,6 +47,32 @@ namespace AccessControl
             {
                 MessageBox.Show(ex.Message, "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void btnAuthentic_Click(object sender, EventArgs e)
+        {
+            Authentic();
+        }
+
+        private void frmLogIn_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void txtPassword_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode== Keys.Enter)
+            {
+                Authentic();
+            }
+        }
+
+        private void chkPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkPassword.Checked)
+                txtPassword.PasswordChar ='\0';
+            else
+                txtPassword.PasswordChar = '*';
         }
     }
 }

@@ -28,13 +28,7 @@ namespace AccessControl
         {
             InitializeComponent();
 
-            List<Char> options = new List<Char>
-            {
-                Convert.ToChar("A"),
-                Convert.ToChar("B"),
-                Convert.ToChar("C"),
-                Convert.ToChar("D")
-            };
+            List<Char> options = new List<Char>{'A', 'B', 'C', 'D'};
             cmbLevel.DataSource = options;
             btnSaveChanges.Enabled = false;
             try
@@ -72,11 +66,21 @@ namespace AccessControl
                     MessageBox.Show("Password not entered!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtPassword.Focus();
                 }
+                else if (txtRepeatedPassword.Text == "")
+                {
+                    MessageBox.Show("Repeat the Password!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtRepeatedPassword.Focus();
+                }
                 else if (DeveloperRepository.FindByEmail(txtEmail.Text) != null)
                 {
                     MessageBox.Show("This email is already registered!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtEmail.Focus();
                     txtEmail.SelectAll();
+                }
+                else if (txtPassword.Text != txtRepeatedPassword.Text)
+                {
+                    MessageBox.Show("The entered passwords are different!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtRepeatedPassword.Focus();
                 }
                 else
                 {

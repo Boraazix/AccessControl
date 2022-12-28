@@ -1,6 +1,4 @@
-﻿using AccessControl;
-using ControleAcesso;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +18,7 @@ namespace AccessControl
         {
             if (_instance == null || _instance.IsDisposed)
                 _instance = new frmMain();
+            _instance.WindowState= FormWindowState.Maximized;
             return _instance;
         }
         #endregion

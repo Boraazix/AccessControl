@@ -49,6 +49,8 @@
             this.lblLevel = new System.Windows.Forms.Label();
             this.chkAdministrator = new System.Windows.Forms.CheckBox();
             this.chkActive = new System.Windows.Forms.CheckBox();
+            this.txtRepeatedPassword = new System.Windows.Forms.TextBox();
+            this.lblRepeatPassword = new System.Windows.Forms.Label();
             this.pnlMain.SuspendLayout();
             this.grpRegistration.SuspendLayout();
             this.SuspendLayout();
@@ -63,12 +65,12 @@
             this.pnlMain.Controls.Add(this.grpRegistration);
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(457, 371);
+            this.pnlMain.Size = new System.Drawing.Size(457, 406);
             this.pnlMain.TabIndex = 0;
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.Location = new System.Drawing.Point(231, 338);
+            this.btnChangePassword.Location = new System.Drawing.Point(231, 374);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(104, 21);
             this.btnChangePassword.TabIndex = 5;
@@ -78,7 +80,7 @@
             // 
             // btnSaveChanges
             // 
-            this.btnSaveChanges.Location = new System.Drawing.Point(341, 338);
+            this.btnSaveChanges.Location = new System.Drawing.Point(341, 374);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.Size = new System.Drawing.Size(104, 21);
             this.btnSaveChanges.TabIndex = 6;
@@ -88,7 +90,7 @@
             // 
             // btnDeleteDeveloper
             // 
-            this.btnDeleteDeveloper.Location = new System.Drawing.Point(121, 338);
+            this.btnDeleteDeveloper.Location = new System.Drawing.Point(121, 374);
             this.btnDeleteDeveloper.Name = "btnDeleteDeveloper";
             this.btnDeleteDeveloper.Size = new System.Drawing.Size(104, 21);
             this.btnDeleteDeveloper.TabIndex = 4;
@@ -98,7 +100,7 @@
             // 
             // btnEditDeveloper
             // 
-            this.btnEditDeveloper.Location = new System.Drawing.Point(12, 338);
+            this.btnEditDeveloper.Location = new System.Drawing.Point(12, 374);
             this.btnEditDeveloper.Name = "btnEditDeveloper";
             this.btnEditDeveloper.Size = new System.Drawing.Size(104, 21);
             this.btnEditDeveloper.TabIndex = 3;
@@ -111,48 +113,51 @@
             this.lstDevelopers.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstDevelopers.FormattingEnabled = true;
             this.lstDevelopers.ItemHeight = 18;
-            this.lstDevelopers.Location = new System.Drawing.Point(12, 161);
+            this.lstDevelopers.Location = new System.Drawing.Point(12, 201);
             this.lstDevelopers.Name = "lstDevelopers";
             this.lstDevelopers.Size = new System.Drawing.Size(433, 166);
             this.lstDevelopers.TabIndex = 2;
             // 
             // grpRegistration
             // 
+            this.grpRegistration.Controls.Add(this.txtRepeatedPassword);
+            this.grpRegistration.Controls.Add(this.lblRepeatPassword);
             this.grpRegistration.Controls.Add(this.txtPassword);
             this.grpRegistration.Controls.Add(this.btnTipLevel);
             this.grpRegistration.Controls.Add(this.lblName);
-            this.grpRegistration.Controls.Add(this.btnRegister);
             this.grpRegistration.Controls.Add(this.txtName);
             this.grpRegistration.Controls.Add(this.lblBirth);
+            this.grpRegistration.Controls.Add(this.btnRegister);
             this.grpRegistration.Controls.Add(this.lblPassword);
-            this.grpRegistration.Controls.Add(this.dtpBirth);
-            this.grpRegistration.Controls.Add(this.txtEmail);
             this.grpRegistration.Controls.Add(this.cmbLevel);
+            this.grpRegistration.Controls.Add(this.dtpBirth);
+            this.grpRegistration.Controls.Add(this.chkActive);
+            this.grpRegistration.Controls.Add(this.txtEmail);
+            this.grpRegistration.Controls.Add(this.chkAdministrator);
             this.grpRegistration.Controls.Add(this.lblEmail);
             this.grpRegistration.Controls.Add(this.lblLevel);
-            this.grpRegistration.Controls.Add(this.chkAdministrator);
-            this.grpRegistration.Controls.Add(this.chkActive);
             this.grpRegistration.Location = new System.Drawing.Point(12, 12);
             this.grpRegistration.Name = "grpRegistration";
-            this.grpRegistration.Size = new System.Drawing.Size(433, 143);
+            this.grpRegistration.Size = new System.Drawing.Size(433, 183);
             this.grpRegistration.TabIndex = 1;
             this.grpRegistration.TabStop = false;
             this.grpRegistration.Text = "Registration";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(247, 72);
+            this.txtPassword.Location = new System.Drawing.Point(9, 117);
             this.txtPassword.MaxLength = 12;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(180, 20);
-            this.txtPassword.TabIndex = 4;
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(133, 20);
+            this.txtPassword.TabIndex = 6;
             // 
             // btnTipLevel
             // 
-            this.btnTipLevel.Location = new System.Drawing.Point(100, 115);
+            this.btnTipLevel.Location = new System.Drawing.Point(405, 117);
             this.btnTipLevel.Name = "btnTipLevel";
             this.btnTipLevel.Size = new System.Drawing.Size(19, 20);
-            this.btnTipLevel.TabIndex = 6;
+            this.btnTipLevel.TabIndex = 9;
             this.btnTipLevel.Text = "?";
             this.btnTipLevel.UseVisualStyleBackColor = true;
             this.btnTipLevel.Click += new System.EventHandler(this.btnTipLevel_Click);
@@ -168,10 +173,10 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(286, 115);
+            this.btnRegister.Location = new System.Drawing.Point(283, 153);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(141, 21);
-            this.btnRegister.TabIndex = 9;
+            this.btnRegister.TabIndex = 10;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
@@ -196,7 +201,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(244, 56);
+            this.lblPassword.Location = new System.Drawing.Point(9, 101);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(56, 13);
             this.lblPassword.TabIndex = 14;
@@ -221,10 +226,10 @@
             // cmbLevel
             // 
             this.cmbLevel.FormattingEnabled = true;
-            this.cmbLevel.Location = new System.Drawing.Point(9, 114);
+            this.cmbLevel.Location = new System.Drawing.Point(314, 117);
             this.cmbLevel.Name = "cmbLevel";
             this.cmbLevel.Size = new System.Drawing.Size(85, 21);
-            this.cmbLevel.TabIndex = 5;
+            this.cmbLevel.TabIndex = 8;
             // 
             // lblEmail
             // 
@@ -238,7 +243,7 @@
             // lblLevel
             // 
             this.lblLevel.AutoSize = true;
-            this.lblLevel.Location = new System.Drawing.Point(6, 98);
+            this.lblLevel.Location = new System.Drawing.Point(311, 101);
             this.lblLevel.Name = "lblLevel";
             this.lblLevel.Size = new System.Drawing.Size(36, 13);
             this.lblLevel.TabIndex = 5;
@@ -247,10 +252,10 @@
             // chkAdministrator
             // 
             this.chkAdministrator.AutoSize = true;
-            this.chkAdministrator.Location = new System.Drawing.Point(193, 117);
+            this.chkAdministrator.Location = new System.Drawing.Point(334, 75);
             this.chkAdministrator.Name = "chkAdministrator";
             this.chkAdministrator.Size = new System.Drawing.Size(86, 17);
-            this.chkAdministrator.TabIndex = 8;
+            this.chkAdministrator.TabIndex = 5;
             this.chkAdministrator.Text = "Administrator";
             this.chkAdministrator.UseVisualStyleBackColor = true;
             // 
@@ -259,22 +264,40 @@
             this.chkActive.AutoSize = true;
             this.chkActive.Checked = true;
             this.chkActive.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkActive.Location = new System.Drawing.Point(131, 117);
+            this.chkActive.Location = new System.Drawing.Point(258, 74);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(56, 17);
-            this.chkActive.TabIndex = 7;
+            this.chkActive.TabIndex = 4;
             this.chkActive.Text = "Active";
             this.chkActive.UseVisualStyleBackColor = true;
+            // 
+            // txtRepeatedPassword
+            // 
+            this.txtRepeatedPassword.Location = new System.Drawing.Point(164, 117);
+            this.txtRepeatedPassword.MaxLength = 12;
+            this.txtRepeatedPassword.Name = "txtRepeatedPassword";
+            this.txtRepeatedPassword.PasswordChar = '*';
+            this.txtRepeatedPassword.Size = new System.Drawing.Size(133, 20);
+            this.txtRepeatedPassword.TabIndex = 7;
+            // 
+            // lblRepeatPassword
+            // 
+            this.lblRepeatPassword.AutoSize = true;
+            this.lblRepeatPassword.Location = new System.Drawing.Point(161, 101);
+            this.lblRepeatPassword.Name = "lblRepeatPassword";
+            this.lblRepeatPassword.Size = new System.Drawing.Size(112, 13);
+            this.lblRepeatPassword.TabIndex = 16;
+            this.lblRepeatPassword.Text = "Repeat the Password:";
             // 
             // frmRegistrationDevelopers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 371);
+            this.ClientSize = new System.Drawing.Size(457, 406);
             this.Controls.Add(this.pnlMain);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(473, 410);
-            this.MinimumSize = new System.Drawing.Size(473, 410);
+            this.MaximumSize = new System.Drawing.Size(473, 445);
+            this.MinimumSize = new System.Drawing.Size(473, 445);
             this.Name = "frmRegistrationDevelopers";
             this.Text = "Developer Registration";
             this.pnlMain.ResumeLayout(false);
@@ -307,5 +330,7 @@
         private System.Windows.Forms.ListBox lstDevelopers;
         private System.Windows.Forms.GroupBox grpRegistration;
         private System.Windows.Forms.Button btnChangePassword;
+        private System.Windows.Forms.TextBox txtRepeatedPassword;
+        private System.Windows.Forms.Label lblRepeatPassword;
     }
 }
