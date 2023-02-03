@@ -26,6 +26,7 @@ namespace AccessControl
         public frmMain()
         {
             InitializeComponent();
+            DeveloperLogged = DeveloperRepository.FindByIdWCredencial(1);
             if (DeveloperLogged.Credential.Administrator 
                 || DeveloperLogged.LevelMemory==Convert.ToChar("A"))
             {
@@ -62,6 +63,10 @@ namespace AccessControl
             frmRegistrationProjects.GetInstance().Show();
         }
 
+        private void allocationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
         private void mnuReportDevelopers_Click(object sender, EventArgs e)
         {
             frmReportDeveloper.GetInstance().Show();
@@ -77,6 +82,16 @@ namespace AccessControl
             {
                 MessageBox.Show(ex.Message, "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void mnuRegistrationAllocations_Click(object sender, EventArgs e)
+        {
+            frmRegistrationAllocations.GetInstance().Show();
+        }
+
+        private void mnuRegistrationTasks_Click(object sender, EventArgs e)
+        {
+            frmRegistrationTasks.GetInstance().Show();
         }
     }
 }

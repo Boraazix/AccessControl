@@ -17,7 +17,7 @@ namespace AccessControl
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogIn());
+            Application.Run(new frmMain());
         }
     }
 }

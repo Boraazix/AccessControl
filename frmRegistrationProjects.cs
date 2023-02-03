@@ -67,7 +67,7 @@ namespace AccessControl
 
                     btnEditProject.Enabled = true;
 
-                    MessageBox.Show("Project successfully registered.", "SUCCESSFULLY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Project successfully registered.", "Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     ClearFields();
                 }
@@ -80,7 +80,7 @@ namespace AccessControl
 
         private void btnDeleteProject_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Coming soon...", "NEW", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Coming soon...", "New", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnEditProject_Click(object sender, EventArgs e)
@@ -129,7 +129,7 @@ namespace AccessControl
                     ProjectRepository.Save(project);
                     lstProjects.DataSource = ProjectRepository.FindAll();
 
-                    MessageBox.Show("Project successfully updated.", "SUCCESSFULLY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Project Successfully updated.", "Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     btnRegister.Enabled = true; btnEditProject.Enabled = true;
                     btnDeleteProject.Enabled = true; lstProjects.Enabled = true;

@@ -63,6 +63,7 @@
     <Reference Include="MySql.Data.EntityFramework, Version=8.0.31.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>packages\MySql.Data.EntityFramework.8.0.31\lib\net452\MySql.Data.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -84,6 +85,7 @@
     </Reference>
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Presentation" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -98,6 +100,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllocationRepository.cs" />
     <Compile Include="CredentialRepository.cs" />
     <Compile Include="frmAbout.cs">
       <SubType>Form</SubType>
@@ -119,6 +122,12 @@
     <Compile Include="frmLogIn.Designer.cs">
       <DependentUpon>frmLogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRegistrationAllocations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrationAllocations.Designer.cs">
+      <DependentUpon>frmRegistrationAllocations.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRegistrationDevelopers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +139,12 @@
     </Compile>
     <Compile Include="frmRegistrationProjects.Designer.cs">
       <DependentUpon>frmRegistrationProjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistrationTasks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrationTasks.Designer.cs">
+      <DependentUpon>frmRegistrationTasks.cs</DependentUpon>
     </Compile>
     <Compile Include="frmReportDeveloper.cs">
       <SubType>Form</SubType>
@@ -143,6 +158,12 @@
     <Compile Include="frmReportProject.Designer.cs">
       <DependentUpon>frmReportProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportTask.Designer.cs">
+      <DependentUpon>frmReportTask.cs</DependentUpon>
+    </Compile>
     <Compile Include="Project.cs" />
     <Compile Include="ProjectRepository.cs" />
     <Compile Include="Repository.cs" />
@@ -151,6 +172,7 @@
     <Compile Include="Developer.cs" />
     <Compile Include="DeveloperRepository.cs" />
     <Compile Include="Task.cs" />
+    <Compile Include="TaskRepository.cs" />
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,17 +182,26 @@
     <EmbeddedResource Include="frmLogIn.resx">
       <DependentUpon>frmLogIn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistrationAllocations.resx">
+      <DependentUpon>frmRegistrationAllocations.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRegistrationDevelopers.resx">
       <DependentUpon>frmRegistrationDevelopers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistrationProjects.resx">
       <DependentUpon>frmRegistrationProjects.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistrationTasks.resx">
+      <DependentUpon>frmRegistrationTasks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReportDeveloper.resx">
       <DependentUpon>frmReportDeveloper.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportProject.resx">
       <DependentUpon>frmReportProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportTask.resx">
+      <DependentUpon>frmReportTask.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

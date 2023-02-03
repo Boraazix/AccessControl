@@ -93,12 +93,12 @@
             // 
             // lstProjects
             // 
-            this.lstProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstProjects.FormattingEnabled = true;
-            this.lstProjects.ItemHeight = 15;
+            this.lstProjects.ItemHeight = 18;
             this.lstProjects.Location = new System.Drawing.Point(12, 124);
             this.lstProjects.Name = "lstProjects";
-            this.lstProjects.Size = new System.Drawing.Size(416, 169);
+            this.lstProjects.Size = new System.Drawing.Size(416, 166);
             this.lstProjects.TabIndex = 2;
             // 
             // grpRegistration

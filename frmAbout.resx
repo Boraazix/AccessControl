@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="ttLigaI.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pcbMain.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -475,7 +478,7 @@
         zQA7n0p9Mp9ABmpefSmU/n0oAKfTKXNADql59Kip6k0Fj805DTKloAfT0pnPpT6AJPwqSOmc+lPjoIJP
         wpaVadVgOp/PpTadQAVLTak/CgAHHQYpx5680nPpRQBm+KNFg8QaDeWc43Bo2CcZ2n1FfIWqTlkaJVJN
         fXXijW4vD+i3FxI4VgrLGOmTXylfTW1ozFiCfU159fc+hy2M3Fvoc9HpMsoweR71aGhFFztOaq3Hjuxs
-        JWTIP/Aaik+JFrMNqjB9q4+VnsezLraaq9TWhpSmBsVyF146jLfKma6Hw7rEWrKZEzleoqJJi5XE6mGQ
+        JWTip/Aaik+JFrMNqjB9q4+VnsezLraaq9TWhpSmBsVyF146jLfKma6Hw7rEWrKZEzleoqJJi5XE6mGQ
         7utSXLfLVWF6XVLpLOzaWVgorDlN+blRh6rqUdjGzyMBXgPxR+JDGR7O1zLKzcBTWr8UviQtnG8ML+ZM
         3RVNcz8NvAE2pXQ1vWFaUSHdFG/9c1104qmryPIq1pVpckNi38L/AAIwmXWdVT99IcxxsM4NeqzSDYNo
         x9Kr4EahVG1R0C8CoWkPrWMp8zudtOmqcbIrGdZLgrn7vWoLkr83NIyqJnccVn3dxs6mnETkV75UWLIA
@@ -924,7 +927,7 @@
         Z01hJbqrNGSPcVnXG5W5WsJM1ibH9oWz9h+VPhmRvvcVh+XjvUyz+9Tcs6SOG2kZQ7DHvVp9N0+6bacA
         /WuXa4IXOefrT1uHY5DYP1oTA6mHwbY3n8QH41UuPh1EDujlGPaqVpqjx/xH86tf27cYA3NhevNaRlEU
         kyt/whBk3bHzTY/A9xI23PNT/wDCRS2/3P0qaDxZcRlTkZ+tb80GZWkRDwTexNtBBNMbw7fw/diJ/Cta
-        HxtIpyygn3qynjpV+8oP1pctMa5jmbrS5oVzJC34is+TS51HmRIzD6V2114qs7+NldNp+lS6Rr1ha27w
+        HxTipyygn3qynjpV+8oP1pctMa5jmbrS5oVzJC34is+TS51HmRIzD6V2114qs7+NldNp+lS6Rr1ha27w
         yhX3NwzDNXFRvuErnnsjTq22Tr9Kt29xNHCq7Tt9cV1Ovf2delZLZVQ+nSrdjBp81vGJNqtt+7muyG+5
         zyuch9tb0qdLhtv3a2LnRbaO8Vo2Vk/u54rWXw1aSQnbKo3dMV3079znmcogHpSDcG44rRvtKk0+Tay7
         l9QarRRkvzzXZGJz25h1javeXCQKPmYqtfsdqXiHTvhD+zZ4fsdKih86bTlQRx4yT5eSxx396/J/4f8A
@@ -1609,9 +1612,6 @@
         +YazeWF70b95cPBuEH0DEfIISIouDtIAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="ttLigaI.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="lblText.Text" xml:space="preserve">
     <value>System made by Russell Edward Timóteo Torres.
 

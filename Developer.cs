@@ -13,7 +13,7 @@ namespace AccessControl
     {
         public Int64 Id { get; set; }
         [Required]
-        [StringLength(45)]
+        [MaxLength(45)]
         public string Name { get; set; }
         [NotMapped]
         public string Email
@@ -56,6 +56,7 @@ namespace AccessControl
                     return "No";
             }
         }
+        public List<Allocation> Allocations { get; set; }
         public Developer() { }
         public Developer(string name)
         {
@@ -71,7 +72,7 @@ namespace AccessControl
 
         public override string ToString()
         {
-            return Id+": "+(Name.Length>28?Name.Substring(0,28):Name)+" | "+(this.Credential.Active ? "Active" : "Inactive");
+            return Id+": "+(Name.Length>23?Name.Substring(0,23)+"...":Name)+" | "+(this.Credential.Active ? "Active" : "Inactive");
         }
     }
 }

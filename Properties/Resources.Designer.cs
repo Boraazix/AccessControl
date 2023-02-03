@@ -13,7 +13,7 @@ namespace AccessControl.Properties
 
 
     /// <summary>
-    ///   Uma classe de recurso fortemente tipados, para pesquisar cadeias de caracteres localizadas etc.
+    ///   Uma classe de recurso fortemente Tipados, para pesquisar cadeias de caracteres localizadas etc.
     /// </summary>
     // Esta classe foi gerada automaticamente pela StronglyTypedResourceBuilder
     // classe através de uma ferramenta como ResGen ou Visual Studio.
@@ -53,7 +53,7 @@ namespace AccessControl.Properties
 
         /// <summary>
         ///   Substitui a propriedade CurrentUICulture do thread atual para todas
-        ///   as pesquisas de recursos que usam esta classe de recursos fortemente tipados.
+        ///   as pesquisas de recursos que usam esta classe de recursos fortemente Tipados.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Globalization.CultureInfo Culture

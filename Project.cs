@@ -12,11 +12,12 @@ namespace AccessControl
     public class Project
     {
         public long Id { get; set; }
-        [StringLength(35)]
+        [MaxLength(35)]
         public String Name { get; set; }
         public DateTime Start { get; set; }
         public DateTime PlannedFinish { get; set; }
         public DateTime Finish { get; set; }
+        public List<Allocation> Allocations { get; set; }
         public Project() { }
         public Project(string name, DateTime start, DateTime pfinished, DateTime finished)
         {
@@ -27,7 +28,7 @@ namespace AccessControl
         }
         public override string ToString()
         {
-            return Id+": "+(Name.Length>24?Name.Substring(0,24):Name)+", S.:"+Start.ToString("dd/MM/yyyy")+", P.F.:"+PlannedFinish.Date.ToString("dd/MM/yyyy");
+            return Id+": "+(Name.Length>29?Name.Substring(0,29)+"...":Name);
         }
     }
 }

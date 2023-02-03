@@ -35,22 +35,22 @@
             this.btnEditDeveloper = new System.Windows.Forms.Button();
             this.lstDevelopers = new System.Windows.Forms.ListBox();
             this.grpRegistration = new System.Windows.Forms.GroupBox();
+            this.txtRepeatedPassword = new System.Windows.Forms.TextBox();
+            this.lblRepeatPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnTipLevel = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
-            this.btnRegister = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblBirth = new System.Windows.Forms.Label();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.dtpBirth = new System.Windows.Forms.DateTimePicker();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.cmbLevel = new System.Windows.Forms.ComboBox();
+            this.dtpBirth = new System.Windows.Forms.DateTimePicker();
+            this.chkActive = new System.Windows.Forms.CheckBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.chkAdministrator = new System.Windows.Forms.CheckBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblLevel = new System.Windows.Forms.Label();
-            this.chkAdministrator = new System.Windows.Forms.CheckBox();
-            this.chkActive = new System.Windows.Forms.CheckBox();
-            this.txtRepeatedPassword = new System.Windows.Forms.TextBox();
-            this.lblRepeatPassword = new System.Windows.Forms.Label();
             this.pnlMain.SuspendLayout();
             this.grpRegistration.SuspendLayout();
             this.SuspendLayout();
@@ -143,6 +143,24 @@
             this.grpRegistration.TabStop = false;
             this.grpRegistration.Text = "Registration";
             // 
+            // txtRepeatedPassword
+            // 
+            this.txtRepeatedPassword.Location = new System.Drawing.Point(164, 117);
+            this.txtRepeatedPassword.MaxLength = 12;
+            this.txtRepeatedPassword.Name = "txtRepeatedPassword";
+            this.txtRepeatedPassword.PasswordChar = '*';
+            this.txtRepeatedPassword.Size = new System.Drawing.Size(133, 20);
+            this.txtRepeatedPassword.TabIndex = 7;
+            // 
+            // lblRepeatPassword
+            // 
+            this.lblRepeatPassword.AutoSize = true;
+            this.lblRepeatPassword.Location = new System.Drawing.Point(161, 101);
+            this.lblRepeatPassword.Name = "lblRepeatPassword";
+            this.lblRepeatPassword.Size = new System.Drawing.Size(112, 13);
+            this.lblRepeatPassword.TabIndex = 16;
+            this.lblRepeatPassword.Text = "Repeat the Password:";
+            // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(9, 117);
@@ -171,16 +189,6 @@
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name:";
             // 
-            // btnRegister
-            // 
-            this.btnRegister.Location = new System.Drawing.Point(283, 153);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(141, 21);
-            this.btnRegister.TabIndex = 10;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(9, 31);
@@ -198,14 +206,32 @@
             this.lblBirth.TabIndex = 2;
             this.lblBirth.Text = "Birth date:";
             // 
+            // btnRegister
+            // 
+            this.btnRegister.Location = new System.Drawing.Point(283, 153);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(141, 21);
+            this.btnRegister.TabIndex = 10;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(9, 101);
+            this.lblPassword.Location = new System.Drawing.Point(6, 101);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(56, 13);
             this.lblPassword.TabIndex = 14;
             this.lblPassword.Text = "Password:";
+            // 
+            // cmbLevel
+            // 
+            this.cmbLevel.FormattingEnabled = true;
+            this.cmbLevel.Location = new System.Drawing.Point(314, 117);
+            this.cmbLevel.Name = "cmbLevel";
+            this.cmbLevel.Size = new System.Drawing.Size(85, 21);
+            this.cmbLevel.TabIndex = 8;
             // 
             // dtpBirth
             // 
@@ -215,6 +241,18 @@
             this.dtpBirth.Size = new System.Drawing.Size(141, 20);
             this.dtpBirth.TabIndex = 2;
             // 
+            // chkActive
+            // 
+            this.chkActive.AutoSize = true;
+            this.chkActive.Checked = true;
+            this.chkActive.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkActive.Location = new System.Drawing.Point(258, 74);
+            this.chkActive.Name = "chkActive";
+            this.chkActive.Size = new System.Drawing.Size(56, 17);
+            this.chkActive.TabIndex = 4;
+            this.chkActive.Text = "Active";
+            this.chkActive.UseVisualStyleBackColor = true;
+            // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(9, 72);
@@ -223,13 +261,15 @@
             this.txtEmail.Size = new System.Drawing.Size(223, 20);
             this.txtEmail.TabIndex = 3;
             // 
-            // cmbLevel
+            // chkAdministrator
             // 
-            this.cmbLevel.FormattingEnabled = true;
-            this.cmbLevel.Location = new System.Drawing.Point(314, 117);
-            this.cmbLevel.Name = "cmbLevel";
-            this.cmbLevel.Size = new System.Drawing.Size(85, 21);
-            this.cmbLevel.TabIndex = 8;
+            this.chkAdministrator.AutoSize = true;
+            this.chkAdministrator.Location = new System.Drawing.Point(334, 75);
+            this.chkAdministrator.Name = "chkAdministrator";
+            this.chkAdministrator.Size = new System.Drawing.Size(86, 17);
+            this.chkAdministrator.TabIndex = 5;
+            this.chkAdministrator.Text = "Administrator";
+            this.chkAdministrator.UseVisualStyleBackColor = true;
             // 
             // lblEmail
             // 
@@ -248,46 +288,6 @@
             this.lblLevel.Size = new System.Drawing.Size(36, 13);
             this.lblLevel.TabIndex = 5;
             this.lblLevel.Text = "Level:";
-            // 
-            // chkAdministrator
-            // 
-            this.chkAdministrator.AutoSize = true;
-            this.chkAdministrator.Location = new System.Drawing.Point(334, 75);
-            this.chkAdministrator.Name = "chkAdministrator";
-            this.chkAdministrator.Size = new System.Drawing.Size(86, 17);
-            this.chkAdministrator.TabIndex = 5;
-            this.chkAdministrator.Text = "Administrator";
-            this.chkAdministrator.UseVisualStyleBackColor = true;
-            // 
-            // chkActive
-            // 
-            this.chkActive.AutoSize = true;
-            this.chkActive.Checked = true;
-            this.chkActive.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkActive.Location = new System.Drawing.Point(258, 74);
-            this.chkActive.Name = "chkActive";
-            this.chkActive.Size = new System.Drawing.Size(56, 17);
-            this.chkActive.TabIndex = 4;
-            this.chkActive.Text = "Active";
-            this.chkActive.UseVisualStyleBackColor = true;
-            // 
-            // txtRepeatedPassword
-            // 
-            this.txtRepeatedPassword.Location = new System.Drawing.Point(164, 117);
-            this.txtRepeatedPassword.MaxLength = 12;
-            this.txtRepeatedPassword.Name = "txtRepeatedPassword";
-            this.txtRepeatedPassword.PasswordChar = '*';
-            this.txtRepeatedPassword.Size = new System.Drawing.Size(133, 20);
-            this.txtRepeatedPassword.TabIndex = 7;
-            // 
-            // lblRepeatPassword
-            // 
-            this.lblRepeatPassword.AutoSize = true;
-            this.lblRepeatPassword.Location = new System.Drawing.Point(161, 101);
-            this.lblRepeatPassword.Name = "lblRepeatPassword";
-            this.lblRepeatPassword.Size = new System.Drawing.Size(112, 13);
-            this.lblRepeatPassword.TabIndex = 16;
-            this.lblRepeatPassword.Text = "Repeat the Password:";
             // 
             // frmRegistrationDevelopers
             // 

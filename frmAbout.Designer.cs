@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAbout));
+            this.ttLigaI = new System.Windows.Forms.ToolTip(this.components);
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pcbMain = new System.Windows.Forms.PictureBox();
             this.pcbGitHub = new System.Windows.Forms.PictureBox();
@@ -41,7 +42,6 @@
             this.lklblInternews = new System.Windows.Forms.LinkLabel();
             this.lklblKumon = new System.Windows.Forms.LinkLabel();
             this.lblText = new System.Windows.Forms.Label();
-            this.ttLigaI = new System.Windows.Forms.ToolTip(this.components);
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbGitHub)).BeginInit();
@@ -49,6 +49,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbTwitter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbGmail)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ttLigaI
+            // 
+            this.ttLigaI.ToolTipTitle = "Liga I";
             // 
             // pnlMain
             // 
@@ -65,7 +69,7 @@
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(468, 403);
-            this.pnlMain.TabIndex = 1;
+            this.pnlMain.TabIndex = 2;
             // 
             // pcbMain
             // 
@@ -176,10 +180,6 @@
             this.lblText.TabIndex = 9;
             this.lblText.Text = resources.GetString("lblText.Text");
             // 
-            // ttLigaI
-            // 
-            this.ttLigaI.ToolTipTitle = "Liga I";
-            // 
             // frmAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,17 +203,17 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.ToolTip ttLigaI;
-        private System.Windows.Forms.LinkLabel lklblLigaI;
-        private System.Windows.Forms.LinkLabel lklblIFNMG;
-        private System.Windows.Forms.LinkLabel lklblInternews;
-        private System.Windows.Forms.LinkLabel lklblKumon;
-        private System.Windows.Forms.Label lblText;
+        private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.PictureBox pcbMain;
         private System.Windows.Forms.PictureBox pcbGitHub;
         private System.Windows.Forms.PictureBox pcbLinkedIn;
         private System.Windows.Forms.PictureBox pcbTwitter;
         private System.Windows.Forms.PictureBox pcbGmail;
+        private System.Windows.Forms.LinkLabel lklblLigaI;
+        private System.Windows.Forms.LinkLabel lklblIFNMG;
+        private System.Windows.Forms.LinkLabel lklblInternews;
+        private System.Windows.Forms.LinkLabel lklblKumon;
+        private System.Windows.Forms.Label lblText;
     }
 }

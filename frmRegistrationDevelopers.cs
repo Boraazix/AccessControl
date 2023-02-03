@@ -42,7 +42,7 @@ namespace AccessControl
         }
         private void ClearFields()
         {
-            txtName.Text = ""; dtpBirth.Value = DateTime.Now;
+            txtName.Text = ""; dtpBirth.Value = DateTime.Now; txtRepeatedPassword.Text = "";
             txtEmail.Text = ""; txtPassword.Text = "";  cmbLevel.SelectedIndex = 0;
             chkActive.Checked = true; chkAdministrator.Checked = false;
             txtName.Focus();
@@ -90,7 +90,7 @@ namespace AccessControl
                     DeveloperRepository.Save(dev);
                     lstDevelopers.DataSource = DeveloperRepository.FindAll();
 
-                    MessageBox.Show("Developer successfully registered.", "SUCCESSFULLY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Developer successfully registered.", "Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     ClearFields();
                 }
@@ -103,12 +103,12 @@ namespace AccessControl
 
         private void btnTipLevel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Just developers level \"A\" and Administrators can make registrations", "TIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Just developers level \"A\" and Administrators can make registrations", "Tip", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Coming soon...", "NEW", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Coming soon...", "New", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -170,7 +170,7 @@ namespace AccessControl
 
                         lstDevelopers.DataSource = DeveloperRepository.FindAll();
 
-                        MessageBox.Show("Developer successfully updated.", "SUCCESSFULLY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Developer Successfully updated.", "Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         ClearFields();
 
@@ -191,7 +191,7 @@ namespace AccessControl
                     {
                         dev.Credential.Password = txtPassword.Text;
                         DeveloperRepository.Save(dev);
-                        MessageBox.Show("Password successfully updated.", "SUCCESSFULLY", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Password Successfully updated.", "Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         ClearFields();
 

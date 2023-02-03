@@ -14,6 +14,8 @@ namespace AccessControl
         private static MySqlConnection _databaseConnection;
         public DbSet<Developer> Developers { get; set; }
         public DbSet<Project> Projects { get; set; }
+        public DbSet<Allocation> Allocations { get; set; }
+        public DbSet<Task> Tasks { get; set; }
         public Repository() : base(GetDbConnection(), false)
         {
             if(Database.CreateIfNotExists())

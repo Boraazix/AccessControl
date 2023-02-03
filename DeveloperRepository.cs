@@ -81,7 +81,7 @@ namespace AccessControl
             {
                 using (Repository dbContext = new Repository())
                 {
-                    return dbContext.Developers
+                    return dbContext.Developers.Include("Credential")
                         .Where(u => u.Name.Contains(partialName))
                         .ToList<Developer>();
                 }

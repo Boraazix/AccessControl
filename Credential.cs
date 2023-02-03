@@ -18,9 +18,9 @@ namespace AccessControl
         public const String SALT = "!@#$%¨&*()_+";
 
         [Index(IsUnique = true)]
-        [StringLength(250)]
+        [MaxLength(250)]
         public String Email { get; set; }
-        [StringLength(64)]
+        [MaxLength(64)]
         private String _password;
         public String Password
         {
