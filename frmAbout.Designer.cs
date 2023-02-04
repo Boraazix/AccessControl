@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAbout));
             this.ttLigaI = new System.Windows.Forms.ToolTip(this.components);
+            this.lklblLigaI = new System.Windows.Forms.LinkLabel();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pcbMain = new System.Windows.Forms.PictureBox();
             this.pcbGitHub = new System.Windows.Forms.PictureBox();
             this.pcbLinkedIn = new System.Windows.Forms.PictureBox();
             this.pcbTwitter = new System.Windows.Forms.PictureBox();
             this.pcbGmail = new System.Windows.Forms.PictureBox();
-            this.lklblLigaI = new System.Windows.Forms.LinkLabel();
             this.lklblIFNMG = new System.Windows.Forms.LinkLabel();
             this.lklblInternews = new System.Windows.Forms.LinkLabel();
             this.lklblKumon = new System.Windows.Forms.LinkLabel();
@@ -53,6 +53,20 @@
             // ttLigaI
             // 
             this.ttLigaI.ToolTipTitle = "Liga I";
+            // 
+            // lklblLigaI
+            // 
+            this.lklblLigaI.ActiveLinkColor = System.Drawing.Color.Black;
+            this.lklblLigaI.AutoSize = true;
+            this.lklblLigaI.LinkColor = System.Drawing.Color.Black;
+            this.lklblLigaI.Location = new System.Drawing.Point(102, 277);
+            this.lklblLigaI.Name = "lklblLigaI";
+            this.lklblLigaI.Size = new System.Drawing.Size(37, 13);
+            this.lklblLigaI.TabIndex = 13;
+            this.lklblLigaI.TabStop = true;
+            this.lklblLigaI.Text = "\'Liga I\'";
+            this.ttLigaI.SetToolTip(this.lklblLigaI, "Awards for those who reach subjects of the\r\nHigh School before the Middle School." +
+        "");
             // 
             // pnlMain
             // 
@@ -122,20 +136,6 @@
             this.pcbGmail.TabIndex = 14;
             this.pcbGmail.TabStop = false;
             this.pcbGmail.Click += new System.EventHandler(this.pcbGmail_Click);
-            // 
-            // lklblLigaI
-            // 
-            this.lklblLigaI.ActiveLinkColor = System.Drawing.Color.Black;
-            this.lklblLigaI.AutoSize = true;
-            this.lklblLigaI.LinkColor = System.Drawing.Color.Black;
-            this.lklblLigaI.Location = new System.Drawing.Point(102, 277);
-            this.lklblLigaI.Name = "lklblLigaI";
-            this.lklblLigaI.Size = new System.Drawing.Size(37, 13);
-            this.lklblLigaI.TabIndex = 13;
-            this.lklblLigaI.TabStop = true;
-            this.lklblLigaI.Text = "\'Liga I\'";
-            this.ttLigaI.SetToolTip(this.lklblLigaI, "Awards for those who reach subjects of the\r\nHigh School before the Middle School." +
-        "");
             // 
             // lklblIFNMG
             // 

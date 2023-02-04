@@ -26,7 +26,6 @@ namespace AccessControl
         public frmMain()
         {
             InitializeComponent();
-            DeveloperLogged = DeveloperRepository.FindByIdWCredencial(1);
             if (DeveloperLogged.Credential.Administrator 
                 || DeveloperLogged.LevelMemory==Convert.ToChar("A"))
             {
@@ -37,6 +36,7 @@ namespace AccessControl
                 mnuRegistration.Enabled = false;
             }
         }
+        #region Clicks
         private void mnuBack_Click(Object sender, EventArgs e)
         {
             frmLogIn.GetInstance().Show();
@@ -69,14 +69,14 @@ namespace AccessControl
 
         private void mnuReportDevelopers_Click(object sender, EventArgs e)
         {
-            frmReportDeveloper.GetInstance().Show();
+            frmReportDevelopers.GetInstance().Show();
         }
 
         private void mnuReportProjects_Click(object sender, EventArgs e)
         {
             try
             {
-                frmReportProject.GetInstance().Show();
+                frmReportProjects.GetInstance().Show();
             }
             catch (Exception ex)
             {
@@ -93,5 +93,12 @@ namespace AccessControl
         {
             frmRegistrationTasks.GetInstance().Show();
         }
+
+        private void mnuReportTasks_Click(object sender, EventArgs e)
+        {
+            frmReportTasksByDeveloperProject.GetInstance().Show();
+        }
+#endregion
+
     }
 }

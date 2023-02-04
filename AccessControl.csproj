@@ -146,23 +146,29 @@
     <Compile Include="frmRegistrationTasks.Designer.cs">
       <DependentUpon>frmRegistrationTasks.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReportDeveloper.cs">
+    <Compile Include="frmReportDevelopers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReportDeveloper.Designer.cs">
-      <DependentUpon>frmReportDeveloper.cs</DependentUpon>
+    <Compile Include="frmReportDevelopers.Designer.cs">
+      <DependentUpon>frmReportDevelopers.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReportProject.cs">
+    <Compile Include="frmReportProjects.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReportProject.Designer.cs">
-      <DependentUpon>frmReportProject.cs</DependentUpon>
+    <Compile Include="frmReportProjects.Designer.cs">
+      <DependentUpon>frmReportProjects.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReportTask.cs">
+    <Compile Include="frmReportTasks.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReportTask.Designer.cs">
-      <DependentUpon>frmReportTask.cs</DependentUpon>
+    <Compile Include="frmReportTasks.Designer.cs">
+      <DependentUpon>frmReportTasks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportTasksByDeveloperProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportTasksByDeveloperProject.Designer.cs">
+      <DependentUpon>frmReportTasksByDeveloperProject.cs</DependentUpon>
     </Compile>
     <Compile Include="Project.cs" />
     <Compile Include="ProjectRepository.cs" />
@@ -194,14 +200,17 @@
     <EmbeddedResource Include="frmRegistrationTasks.resx">
       <DependentUpon>frmRegistrationTasks.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportDeveloper.resx">
-      <DependentUpon>frmReportDeveloper.cs</DependentUpon>
+    <EmbeddedResource Include="frmReportDevelopers.resx">
+      <DependentUpon>frmReportDevelopers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportProject.resx">
-      <DependentUpon>frmReportProject.cs</DependentUpon>
+    <EmbeddedResource Include="frmReportProjects.resx">
+      <DependentUpon>frmReportProjects.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportTask.resx">
-      <DependentUpon>frmReportTask.cs</DependentUpon>
+    <EmbeddedResource Include="frmReportTasks.resx">
+      <DependentUpon>frmReportTasks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportTasksByDeveloperProject.resx">
+      <DependentUpon>frmReportTasksByDeveloperProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

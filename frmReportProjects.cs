@@ -11,17 +11,17 @@ using System.Windows.Forms;
 
 namespace AccessControl
 {
-    public partial class frmReportProject : Form
+    public partial class frmReportProjects : Form
     {
         #region Singleton
-        private static frmReportProject _instance;
-        public static frmReportProject GetInstance()
+        private static frmReportProjects _instance;
+        public static frmReportProjects GetInstance()
         {
             List<Project> projects = ProjectRepository.FindAll();
             if (projects.Count>0)
             {
                 if (_instance == null || _instance.IsDisposed)
-                    _instance = new frmReportProject();
+                    _instance = new frmReportProjects();
                 _instance.MdiParent = frmMain.ActiveForm;
                 _instance.WindowState = FormWindowState.Normal;
                 return _instance;
@@ -32,7 +32,7 @@ namespace AccessControl
             }
         }
         #endregion
-        public frmReportProject()
+        public frmReportProjects()
         {
             InitializeComponent();
             dgvMain.DataSource = ProjectRepository.FindAll();

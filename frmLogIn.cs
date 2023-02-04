@@ -30,9 +30,15 @@ namespace AccessControl
             try
             {
                 if (txtEmail.Text == "")
+                {
                     MessageBox.Show("Email not entered!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtEmail.Focus();
+                }
                 else if (txtPassword.Text == "")
+                {
                     MessageBox.Show("Password not entered!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtPassword.Focus();
+                }
                 else if (CredentialRepository.ValidateDev(txtEmail.Text, txtPassword.Text))
                 {
                     MessageBox.Show($"Welcome {frmMain.DeveloperLogged.Name}!", "LOG-IN CORRECT", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -46,6 +52,16 @@ namespace AccessControl
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if(ex.Message== "This password is incorrect, please try again")
+                {
+                    txtPassword.Focus();
+                    txtPassword.SelectAll();
+                }
+                else if (ex.Message == "This email is incorrect, please try again")
+                {
+                    txtEmail.Focus();
+                    txtEmail.SelectAll();
+                }
             }
         }
 

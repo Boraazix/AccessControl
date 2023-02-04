@@ -36,10 +36,11 @@
             this.mnuRegistrationDevelopers = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRegistrationProjects = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRegistrationAllocations = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRegistrationTasks = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuReport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuReportDevelopers = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuReportProjects = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuRegistrationTasks = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuReportTasks = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,29 +93,37 @@
             // mnuRegistrationDevelopers
             // 
             this.mnuRegistrationDevelopers.Name = "mnuRegistrationDevelopers";
-            this.mnuRegistrationDevelopers.Size = new System.Drawing.Size(180, 22);
+            this.mnuRegistrationDevelopers.Size = new System.Drawing.Size(133, 22);
             this.mnuRegistrationDevelopers.Text = "Developers";
             this.mnuRegistrationDevelopers.Click += new System.EventHandler(this.mnuDevelopers_Click);
             // 
             // mnuRegistrationProjects
             // 
             this.mnuRegistrationProjects.Name = "mnuRegistrationProjects";
-            this.mnuRegistrationProjects.Size = new System.Drawing.Size(180, 22);
+            this.mnuRegistrationProjects.Size = new System.Drawing.Size(133, 22);
             this.mnuRegistrationProjects.Text = "Projects";
             this.mnuRegistrationProjects.Click += new System.EventHandler(this.mnuProjects_Click);
             // 
             // mnuRegistrationAllocations
             // 
             this.mnuRegistrationAllocations.Name = "mnuRegistrationAllocations";
-            this.mnuRegistrationAllocations.Size = new System.Drawing.Size(180, 22);
+            this.mnuRegistrationAllocations.Size = new System.Drawing.Size(133, 22);
             this.mnuRegistrationAllocations.Text = "Allocations";
             this.mnuRegistrationAllocations.Click += new System.EventHandler(this.mnuRegistrationAllocations_Click);
+            // 
+            // mnuRegistrationTasks
+            // 
+            this.mnuRegistrationTasks.Name = "mnuRegistrationTasks";
+            this.mnuRegistrationTasks.Size = new System.Drawing.Size(133, 22);
+            this.mnuRegistrationTasks.Text = "Tasks";
+            this.mnuRegistrationTasks.Click += new System.EventHandler(this.mnuRegistrationTasks_Click);
             // 
             // mnuReport
             // 
             this.mnuReport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuReportDevelopers,
-            this.mnuReportProjects});
+            this.mnuReportProjects,
+            this.mnuReportTasks});
             this.mnuReport.Name = "mnuReport";
             this.mnuReport.Size = new System.Drawing.Size(54, 20);
             this.mnuReport.Text = "Report";
@@ -122,23 +131,23 @@
             // mnuReportDevelopers
             // 
             this.mnuReportDevelopers.Name = "mnuReportDevelopers";
-            this.mnuReportDevelopers.Size = new System.Drawing.Size(132, 22);
+            this.mnuReportDevelopers.Size = new System.Drawing.Size(180, 22);
             this.mnuReportDevelopers.Text = "Developers";
             this.mnuReportDevelopers.Click += new System.EventHandler(this.mnuReportDevelopers_Click);
             // 
             // mnuReportProjects
             // 
             this.mnuReportProjects.Name = "mnuReportProjects";
-            this.mnuReportProjects.Size = new System.Drawing.Size(132, 22);
+            this.mnuReportProjects.Size = new System.Drawing.Size(180, 22);
             this.mnuReportProjects.Text = "Projects";
             this.mnuReportProjects.Click += new System.EventHandler(this.mnuReportProjects_Click);
             // 
-            // mnuRegistrationTasks
+            // mnuReportTasks
             // 
-            this.mnuRegistrationTasks.Name = "mnuRegistrationTasks";
-            this.mnuRegistrationTasks.Size = new System.Drawing.Size(180, 22);
-            this.mnuRegistrationTasks.Text = "Tasks";
-            this.mnuRegistrationTasks.Click += new System.EventHandler(this.mnuRegistrationTasks_Click);
+            this.mnuReportTasks.Name = "mnuReportTasks";
+            this.mnuReportTasks.Size = new System.Drawing.Size(180, 22);
+            this.mnuReportTasks.Text = "Tasks";
+            this.mnuReportTasks.Click += new System.EventHandler(this.mnuReportTasks_Click);
             // 
             // frmMain
             // 
@@ -172,5 +181,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuReportProjects;
         private System.Windows.Forms.ToolStripMenuItem mnuRegistrationAllocations;
         private System.Windows.Forms.ToolStripMenuItem mnuRegistrationTasks;
+        private System.Windows.Forms.ToolStripMenuItem mnuReportTasks;
     }
 }

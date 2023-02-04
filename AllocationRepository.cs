@@ -45,6 +45,24 @@ namespace AccessControl
                 throw;
             }
         }
+        public static void Remove(Allocation allocation)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    dbContext.Allocations.Attach(allocation);
+                    dbContext.Allocations.Remove(allocation);
+
+                    dbContext.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        #region Finders
         public static List<Allocation> FindAll()
         {
             try
@@ -93,18 +111,41 @@ namespace AccessControl
             {
                 using (Repository dbContext = new Repository())
                 {
-                    List<Allocation> allocationsInProject = new List<Allocation>();
+                    List<Allocation> allocations = proj.Allocations;
                     List<Developer> developers = new List<Developer>();
-
-                    allocationsInProject = dbContext.Allocations.Include("Developer").Include("Project")
-                    .Where(a => a.Project.Id == proj.Id)
-                    .ToList<Allocation>();
-
-                    foreach (Allocation a in allocationsInProject)
+                    foreach (Allocation a in allocations)
                     {
-                        developers.Add(DeveloperRepository.FindByIdWCredencial(a.Developer.Id));
+                        developers.Add(a.Developer);
                     }
                     return developers;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public static List<Allocation> FindAllocationByProject(Project proj)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    return dbContext.Allocations.Include("Developer").Include("Project").Include("Tasks").Where(a=> a.Project.Id == proj.Id).ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public static List<Allocation> FindAllocationByDeveloper(Developer dev)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    return dbContext.Allocations.Include("Developer").Include("Project").Include("Tasks").Where(a => a.Developer.Id == dev.Id).ToList();
                 }
             }
             catch (Exception)
@@ -119,6 +160,21 @@ namespace AccessControl
                 using (Repository dbContext = new Repository())
                 {
                     return dbContext.Allocations.Include("Developer").Include("Project").Include("Tasks").Where(a => a.Developer.Id==dev.Id && a.Project.Id==proj.Id).FirstOrDefault<Allocation>();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public static Allocation FindAllocationByTask(long t)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    Task task = dbContext.Tasks.Find(t);
+                    return dbContext.Allocations.Include("Developer").Include("Project").Include("Tasks").Where(a => a.Tasks.Contains(task)).FirstOrDefault<Allocation>();
                 }
             }
             catch (Exception)
@@ -142,22 +198,7 @@ namespace AccessControl
                 throw;  
             }
         }
-        public static void Remove(Allocation allocation)
-        {
-            try
-            {
-                using (Repository dbContext = new Repository())
-                {
-                    dbContext.Allocations.Attach(allocation);
-                    dbContext.Allocations.Remove(allocation);
+        #endregion
 
-                    dbContext.SaveChanges();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
     }
 }

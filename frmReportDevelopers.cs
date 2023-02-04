@@ -11,20 +11,20 @@ using System.Windows.Forms;
 
 namespace AccessControl
 {
-    public partial class frmReportDeveloper : Form
+    public partial class frmReportDevelopers : Form
     {
         #region Singleton
-        private static frmReportDeveloper _instance;
-        public static frmReportDeveloper GetInstance()
+        private static frmReportDevelopers _instance;
+        public static frmReportDevelopers GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
-                _instance = new frmReportDeveloper();
+                _instance = new frmReportDevelopers();
             _instance.MdiParent = frmMain.ActiveForm;
             _instance.WindowState = FormWindowState.Normal;
             return _instance;
         }
         #endregion
-        public frmReportDeveloper()
+        public frmReportDevelopers()
         {
             InitializeComponent();
             dgvMain.DataSource = DeveloperRepository.FindAll();

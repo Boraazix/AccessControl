@@ -33,6 +33,24 @@ namespace AccessControl
                 throw;
             }
         }
+        public static void Remove(Developer dev)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    dbContext.Developers.Attach(dev);
+                    dbContext.Developers.Remove(dev);
+
+                    dbContext.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        #region Finders
         public static List<Developer> FindAll()
         {
             try
@@ -91,36 +109,21 @@ namespace AccessControl
                 throw;
             }
         }
-        public static void Remove(Developer dev)
+        public static Developer FindByEmail(String email)
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    dbContext.Developers.Attach(dev);
-                    dbContext.Developers.Remove(dev);
+                    return dbContext.Developers.Include("Credential").Where(d => d.Credential.Email == email).FirstOrDefault<Developer>();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        #endregion
 
-                    dbContext.SaveChanges();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        public static Developer FindByEmail(String email)
-        {
-            try
-            {
-                using(Repository dbContext = new Repository())
-                {
-                    return dbContext.Developers.Include("Credential").Where(d=> d.Credential.Email==email).FirstOrDefault<Developer>();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
     }
 }

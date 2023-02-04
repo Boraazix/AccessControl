@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.grpAllocation = new System.Windows.Forms.GroupBox();
+            this.lstDeveloper = new System.Windows.Forms.ListBox();
+            this.lstProject = new System.Windows.Forms.ListBox();
+            this.txtProject = new System.Windows.Forms.TextBox();
+            this.lblProject = new System.Windows.Forms.Label();
+            this.lblDevelopers = new System.Windows.Forms.Label();
             this.brpTasks = new System.Windows.Forms.GroupBox();
             this.btnSaveChanges = new System.Windows.Forms.Button();
             this.btnDeleteTask = new System.Windows.Forms.Button();
@@ -41,17 +47,11 @@
             this.btnAddTask = new System.Windows.Forms.Button();
             this.btnDeleteText = new System.Windows.Forms.Button();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.ttTasks = new System.Windows.Forms.ToolTip(this.components);
-            this.grpAllocation = new System.Windows.Forms.GroupBox();
-            this.lblDevelopers = new System.Windows.Forms.Label();
-            this.lstProject = new System.Windows.Forms.ListBox();
-            this.txtProject = new System.Windows.Forms.TextBox();
-            this.lblProject = new System.Windows.Forms.Label();
-            this.lstDeveloper = new System.Windows.Forms.ListBox();
+            this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pnlMain.SuspendLayout();
+            this.grpAllocation.SuspendLayout();
             this.brpTasks.SuspendLayout();
             this.grpNewTask.SuspendLayout();
-            this.grpAllocation.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -63,6 +63,67 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(687, 380);
             this.pnlMain.TabIndex = 0;
+            // 
+            // grpAllocation
+            // 
+            this.grpAllocation.Controls.Add(this.lstDeveloper);
+            this.grpAllocation.Controls.Add(this.lstProject);
+            this.grpAllocation.Controls.Add(this.txtProject);
+            this.grpAllocation.Controls.Add(this.lblProject);
+            this.grpAllocation.Controls.Add(this.lblDevelopers);
+            this.grpAllocation.Location = new System.Drawing.Point(13, 14);
+            this.grpAllocation.Name = "grpAllocation";
+            this.grpAllocation.Size = new System.Drawing.Size(277, 354);
+            this.grpAllocation.TabIndex = 0;
+            this.grpAllocation.TabStop = false;
+            this.grpAllocation.Text = "Allocation";
+            // 
+            // lstDeveloper
+            // 
+            this.lstDeveloper.FormattingEnabled = true;
+            this.lstDeveloper.Location = new System.Drawing.Point(6, 172);
+            this.lstDeveloper.Name = "lstDeveloper";
+            this.lstDeveloper.Size = new System.Drawing.Size(262, 173);
+            this.lstDeveloper.TabIndex = 2;
+            this.lstDeveloper.SelectedIndexChanged += new System.EventHandler(this.lstDeveloper_SelectedIndexChanged);
+            this.lstDeveloper.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lstDeveloper_MouseMove);
+            // 
+            // lstProject
+            // 
+            this.lstProject.FormattingEnabled = true;
+            this.lstProject.Location = new System.Drawing.Point(6, 45);
+            this.lstProject.Name = "lstProject";
+            this.lstProject.Size = new System.Drawing.Size(260, 108);
+            this.lstProject.TabIndex = 1;
+            this.lstProject.SelectedIndexChanged += new System.EventHandler(this.lstProject_SelectedIndexChanged);
+            this.lstProject.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lstProject_MouseMove);
+            // 
+            // txtProject
+            // 
+            this.txtProject.Location = new System.Drawing.Point(55, 19);
+            this.txtProject.MaxLength = 35;
+            this.txtProject.Name = "txtProject";
+            this.txtProject.Size = new System.Drawing.Size(211, 20);
+            this.txtProject.TabIndex = 0;
+            this.txtProject.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtProject_KeyUp);
+            // 
+            // lblProject
+            // 
+            this.lblProject.AutoSize = true;
+            this.lblProject.Location = new System.Drawing.Point(6, 22);
+            this.lblProject.Name = "lblProject";
+            this.lblProject.Size = new System.Drawing.Size(43, 13);
+            this.lblProject.TabIndex = 6;
+            this.lblProject.Text = "Project:";
+            // 
+            // lblDevelopers
+            // 
+            this.lblDevelopers.AutoSize = true;
+            this.lblDevelopers.Location = new System.Drawing.Point(6, 156);
+            this.lblDevelopers.Name = "lblDevelopers";
+            this.lblDevelopers.Size = new System.Drawing.Size(130, 13);
+            this.lblDevelopers.TabIndex = 5;
+            this.lblDevelopers.Text = "Developers in this Project:";
             // 
             // brpTasks
             // 
@@ -181,65 +242,6 @@
             this.txtDescription.Size = new System.Drawing.Size(280, 87);
             this.txtDescription.TabIndex = 0;
             // 
-            // grpAllocation
-            // 
-            this.grpAllocation.Controls.Add(this.lstDeveloper);
-            this.grpAllocation.Controls.Add(this.lstProject);
-            this.grpAllocation.Controls.Add(this.txtProject);
-            this.grpAllocation.Controls.Add(this.lblProject);
-            this.grpAllocation.Controls.Add(this.lblDevelopers);
-            this.grpAllocation.Location = new System.Drawing.Point(13, 14);
-            this.grpAllocation.Name = "grpAllocation";
-            this.grpAllocation.Size = new System.Drawing.Size(277, 354);
-            this.grpAllocation.TabIndex = 0;
-            this.grpAllocation.TabStop = false;
-            this.grpAllocation.Text = "Allocation";
-            // 
-            // lblDevelopers
-            // 
-            this.lblDevelopers.AutoSize = true;
-            this.lblDevelopers.Location = new System.Drawing.Point(6, 156);
-            this.lblDevelopers.Name = "lblDevelopers";
-            this.lblDevelopers.Size = new System.Drawing.Size(130, 13);
-            this.lblDevelopers.TabIndex = 5;
-            this.lblDevelopers.Text = "Developers in this Project:";
-            // 
-            // lstProject
-            // 
-            this.lstProject.FormattingEnabled = true;
-            this.lstProject.Location = new System.Drawing.Point(6, 45);
-            this.lstProject.Name = "lstProject";
-            this.lstProject.Size = new System.Drawing.Size(260, 108);
-            this.lstProject.TabIndex = 1;
-            this.lstProject.SelectedIndexChanged += new System.EventHandler(this.lstProject_SelectedIndexChanged);
-            // 
-            // txtProject
-            // 
-            this.txtProject.Location = new System.Drawing.Point(55, 19);
-            this.txtProject.MaxLength = 35;
-            this.txtProject.Name = "txtProject";
-            this.txtProject.Size = new System.Drawing.Size(211, 20);
-            this.txtProject.TabIndex = 0;
-            this.txtProject.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtProject_KeyUp);
-            // 
-            // lblProject
-            // 
-            this.lblProject.AutoSize = true;
-            this.lblProject.Location = new System.Drawing.Point(6, 22);
-            this.lblProject.Name = "lblProject";
-            this.lblProject.Size = new System.Drawing.Size(43, 13);
-            this.lblProject.TabIndex = 6;
-            this.lblProject.Text = "Project:";
-            // 
-            // lstDeveloper
-            // 
-            this.lstDeveloper.FormattingEnabled = true;
-            this.lstDeveloper.Location = new System.Drawing.Point(6, 172);
-            this.lstDeveloper.Name = "lstDeveloper";
-            this.lstDeveloper.Size = new System.Drawing.Size(262, 173);
-            this.lstDeveloper.TabIndex = 2;
-            this.lstDeveloper.SelectedIndexChanged += new System.EventHandler(this.lstDeveloper_SelectedIndexChanged);
-            // 
             // frmRegistrationTasks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,11 +252,11 @@
             this.Name = "frmRegistrationTasks";
             this.Text = "frmRegistrationTasks";
             this.pnlMain.ResumeLayout(false);
+            this.grpAllocation.ResumeLayout(false);
+            this.grpAllocation.PerformLayout();
             this.brpTasks.ResumeLayout(false);
             this.grpNewTask.ResumeLayout(false);
             this.grpNewTask.PerformLayout();
-            this.grpAllocation.ResumeLayout(false);
-            this.grpAllocation.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -273,7 +275,7 @@
         private System.Windows.Forms.Button btnEditTask;
         private System.Windows.Forms.ListBox lstTasks;
         private System.Windows.Forms.Label lblAllocationStatic;
-        private System.Windows.Forms.ToolTip ttTasks;
+        private System.Windows.Forms.ToolTip ttMain;
         private System.Windows.Forms.GroupBox grpAllocation;
         private System.Windows.Forms.Label lblDevelopers;
         private System.Windows.Forms.ListBox lstProject;

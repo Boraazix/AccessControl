@@ -101,6 +101,21 @@ namespace AccessControl
                 MessageBox.Show(ex.Message, "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Save();
+        }
+        private void txtRemuneration_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Save();
+            }
+        }
+        private void frmRegistrationAllocations_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ClearFields();
+        }
 
         private void txtDeveloper_KeyUp(object sender, KeyEventArgs e)
         {
@@ -108,6 +123,11 @@ namespace AccessControl
                 lstDeveloper.DataSource=DeveloperRepository.FindByPartialName(txtDeveloper.Text);
             else
                 lstDeveloper.DataSource=DeveloperRepository.FindAll();
+            if (lstDeveloper.SelectedIndex < 0)
+            {
+                lblSelectedDeveloper.Text = "Select a Developer";
+                lblSelectedDeveloper.ForeColor = Color.Red;
+            }
         }
 
         private void txtProject_KeyUp(object sender, KeyEventArgs e)
@@ -116,27 +136,27 @@ namespace AccessControl
                 lstProject.DataSource = ProjectRepository.FindByPartialName(txtProject.Text);
             else
                 lstProject.DataSource=ProjectRepository.FindAll();
-        }
-
-        private void lstDeveloper_DoubleClick(object sender, EventArgs e)
-        {
-            if(lstDeveloper.SelectedIndex >= 0)
+            if (lstProject.SelectedIndex < 0)
             {
-                _selectedDeveloper = (Developer)lstDeveloper.SelectedItem;
-                lblSelectedDeveloper.Text = (_selectedDeveloper.Name.Length > 31 ? _selectedDeveloper.Name.Substring(0, 31) + "..." : _selectedDeveloper.Name);
-                lblSelectedDeveloper.ForeColor = Color.Green;
+                lblSelectedProject.Text = "Select a Project";
+                lblSelectedProject.ForeColor = Color.Red;
+            }
+        }
+        private void txtAllocation_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (txtAllocation.Text.Length > 0)
+                    lstAllocations.DataSource = AllocationRepository.FindByPartialName(txtAllocation.Text);
+                else
+                    lstAllocations.DataSource = AllocationRepository.FindAll();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
-        private void lstProject_DoubleClick(object sender, EventArgs e)
-        {
-            if(lstProject.SelectedIndex >= 0)
-            {
-                _selectedProject= (Project)lstProject.SelectedItem;
-                lblSelectedProject.Text = (_selectedProject.Name.Length > 31?_selectedProject.Name.Substring(0,31)+"...":_selectedProject.Name);
-                lblSelectedProject.ForeColor = Color.Green;
-            }
-        }
         #region txtRemuneration mask
         private void txtRemuneration_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -209,23 +229,6 @@ namespace AccessControl
             txtRemuneration.Text = newText;
         }
         #endregion
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            Save();
-        }
-
-        private void txtRemuneration_KeyUp(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode== Keys.Enter)
-            {
-                Save();
-            }
-        }
-
-        private void frmRegistrationAllocations_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ClearFields();
-        }
 
         private void btnEditAllocation_Click(object sender, EventArgs e)
         {
@@ -297,30 +300,55 @@ namespace AccessControl
                 MessageBox.Show(ex.Message, "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+        private void btnAddTasks_Click(object sender, EventArgs e)
+        {
+            frmRegistrationTasks.GetInstance().Show();
+        }
 
         private void lstAllocations_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblAllocation.Text = lstAllocations.SelectedItem.ToString();
         }
 
-        private void txtAllocation_KeyUp(object sender, KeyEventArgs e)
+        private void lstDeveloper_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            _selectedDeveloper = (Developer)lstDeveloper.SelectedItem;
+            lblSelectedDeveloper.Text = (_selectedDeveloper.Name.Length > 31 ? _selectedDeveloper.Name.Substring(0, 31) + "..." : _selectedDeveloper.Name);
+            lblSelectedDeveloper.ForeColor = Color.Green;
+        }
+
+        private void lstProject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _selectedProject = (Project)lstProject.SelectedItem;
+            lblSelectedProject.Text = (_selectedProject.Name.Length > 20 ? _selectedProject.Name.Substring(0, 20) + "..." : _selectedProject.Name);
+            lblSelectedProject.ForeColor = Color.Green;
+        }
+        private void lstProject_MouseMove(object sender, MouseEventArgs e)
+        {
+            int index = lstProject.IndexFromPoint(e.Location);
+            if (index >= 0 && index < lstProject.Items.Count)
             {
-                if (txtAllocation.Text.Length > 0)
-                    lstAllocations.DataSource = AllocationRepository.FindByPartialName(txtAllocation.Text);
-                else
-                    lstAllocations.DataSource = AllocationRepository.FindAll();
+                string itemText = ((Project)lstProject.Items[index]).Name;
+                ttMain.SetToolTip(lstProject, itemText);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                ttMain.SetToolTip(lstProject, string.Empty);
             }
         }
 
-        private void btnAddTasks_Click(object sender, EventArgs e)
+        private void lstDeveloper_MouseMove(object sender, MouseEventArgs e)
         {
-            frmRegistrationTasks.GetInstance().Show();
+            int index = lstDeveloper.IndexFromPoint(e.Location);
+            if (index >= 0 && index < lstDeveloper.Items.Count)
+            {
+                string itemText = ((Developer)lstDeveloper.Items[index]).Name;
+                ttMain.SetToolTip(lstDeveloper, itemText);
+            }
+            else
+            {
+                ttMain.SetToolTip(lstDeveloper, string.Empty);
+            }
         }
     }
 }

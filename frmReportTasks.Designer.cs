@@ -1,6 +1,6 @@
-﻿namespace ControleAcesso
+﻿namespace AccessControl
 {
-    partial class frmReportTask
+    partial class frmReportTasks
     {
         /// <summary>
         /// Required designer variable.

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.lblAllocation = new System.Windows.Forms.Label();
             this.txtAllocation = new System.Windows.Forms.TextBox();
@@ -48,14 +49,15 @@
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.lblStart = new System.Windows.Forms.Label();
             this.grpAllocation = new System.Windows.Forms.GroupBox();
-            this.lblSelectedProject = new System.Windows.Forms.Label();
-            this.lblSelectedDeveloper = new System.Windows.Forms.Label();
             this.lstProject = new System.Windows.Forms.ListBox();
             this.lstDeveloper = new System.Windows.Forms.ListBox();
             this.txtDeveloper = new System.Windows.Forms.TextBox();
             this.txtProject = new System.Windows.Forms.TextBox();
             this.lblDeveloper = new System.Windows.Forms.Label();
             this.lblProject = new System.Windows.Forms.Label();
+            this.lblSelectedDeveloper = new System.Windows.Forms.Label();
+            this.lblSelectedProject = new System.Windows.Forms.Label();
+            this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pnlMain.SuspendLayout();
             this.grpData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHoursPerWeek)).BeginInit();
@@ -280,26 +282,6 @@
             this.grpAllocation.TabStop = false;
             this.grpAllocation.Text = "Allocation";
             // 
-            // lblSelectedProject
-            // 
-            this.lblSelectedProject.AutoSize = true;
-            this.lblSelectedProject.ForeColor = System.Drawing.Color.Red;
-            this.lblSelectedProject.Location = new System.Drawing.Point(294, 191);
-            this.lblSelectedProject.Name = "lblSelectedProject";
-            this.lblSelectedProject.Size = new System.Drawing.Size(82, 13);
-            this.lblSelectedProject.TabIndex = 7;
-            this.lblSelectedProject.Text = "Select a Project";
-            // 
-            // lblSelectedDeveloper
-            // 
-            this.lblSelectedDeveloper.AutoSize = true;
-            this.lblSelectedDeveloper.ForeColor = System.Drawing.Color.Red;
-            this.lblSelectedDeveloper.Location = new System.Drawing.Point(15, 191);
-            this.lblSelectedDeveloper.Name = "lblSelectedDeveloper";
-            this.lblSelectedDeveloper.Size = new System.Drawing.Size(98, 13);
-            this.lblSelectedDeveloper.TabIndex = 6;
-            this.lblSelectedDeveloper.Text = "Select a Developer";
-            // 
             // lstProject
             // 
             this.lstProject.FormattingEnabled = true;
@@ -307,7 +289,8 @@
             this.lstProject.Name = "lstProject";
             this.lstProject.Size = new System.Drawing.Size(262, 134);
             this.lstProject.TabIndex = 3;
-            this.lstProject.DoubleClick += new System.EventHandler(this.lstProject_DoubleClick);
+            this.lstProject.SelectedIndexChanged += new System.EventHandler(this.lstProject_SelectedIndexChanged);
+            this.lstProject.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lstProject_MouseMove);
             // 
             // lstDeveloper
             // 
@@ -316,7 +299,8 @@
             this.lstDeveloper.Name = "lstDeveloper";
             this.lstDeveloper.Size = new System.Drawing.Size(262, 134);
             this.lstDeveloper.TabIndex = 1;
-            this.lstDeveloper.DoubleClick += new System.EventHandler(this.lstDeveloper_DoubleClick);
+            this.lstDeveloper.SelectedIndexChanged += new System.EventHandler(this.lstDeveloper_SelectedIndexChanged);
+            this.lstDeveloper.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lstDeveloper_MouseMove);
             // 
             // txtDeveloper
             // 
@@ -354,6 +338,26 @@
             this.lblProject.TabIndex = 1;
             this.lblProject.Text = "Project:";
             // 
+            // lblSelectedDeveloper
+            // 
+            this.lblSelectedDeveloper.AutoSize = true;
+            this.lblSelectedDeveloper.ForeColor = System.Drawing.Color.Red;
+            this.lblSelectedDeveloper.Location = new System.Drawing.Point(15, 191);
+            this.lblSelectedDeveloper.Name = "lblSelectedDeveloper";
+            this.lblSelectedDeveloper.Size = new System.Drawing.Size(98, 13);
+            this.lblSelectedDeveloper.TabIndex = 6;
+            this.lblSelectedDeveloper.Text = "Select a Developer";
+            // 
+            // lblSelectedProject
+            // 
+            this.lblSelectedProject.AutoSize = true;
+            this.lblSelectedProject.ForeColor = System.Drawing.Color.Red;
+            this.lblSelectedProject.Location = new System.Drawing.Point(294, 191);
+            this.lblSelectedProject.Name = "lblSelectedProject";
+            this.lblSelectedProject.Size = new System.Drawing.Size(82, 13);
+            this.lblSelectedProject.TabIndex = 7;
+            this.lblSelectedProject.Text = "Select a Project";
+            // 
             // frmRegistrationAllocations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,8 +389,6 @@
         private System.Windows.Forms.Label lblProject;
         private System.Windows.Forms.ListBox lstProject;
         private System.Windows.Forms.ListBox lstDeveloper;
-        private System.Windows.Forms.Label lblSelectedProject;
-        private System.Windows.Forms.Label lblSelectedDeveloper;
         private System.Windows.Forms.GroupBox grpData;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblRemuneration;
@@ -405,5 +407,8 @@
         private System.Windows.Forms.Label lblAllocation;
         private System.Windows.Forms.TextBox txtAllocation;
         private System.Windows.Forms.Label lblDeveloperProject;
+        private System.Windows.Forms.Label lblSelectedProject;
+        private System.Windows.Forms.Label lblSelectedDeveloper;
+        private System.Windows.Forms.ToolTip ttMain;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnSaveChanges = new System.Windows.Forms.Button();
@@ -51,6 +52,7 @@
             this.chkAdministrator = new System.Windows.Forms.CheckBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblLevel = new System.Windows.Forms.Label();
+            this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pnlMain.SuspendLayout();
             this.grpRegistration.SuspendLayout();
             this.SuspendLayout();
@@ -86,7 +88,7 @@
             this.btnSaveChanges.TabIndex = 6;
             this.btnSaveChanges.Text = "Save changes";
             this.btnSaveChanges.UseVisualStyleBackColor = true;
-            this.btnSaveChanges.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // btnDeleteDeveloper
             // 
@@ -117,6 +119,7 @@
             this.lstDevelopers.Name = "lstDevelopers";
             this.lstDevelopers.Size = new System.Drawing.Size(433, 166);
             this.lstDevelopers.TabIndex = 2;
+            this.lstDevelopers.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lstDeveloper_MouseMove);
             // 
             // grpRegistration
             // 
@@ -332,5 +335,6 @@
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.TextBox txtRepeatedPassword;
         private System.Windows.Forms.Label lblRepeatPassword;
+        private System.Windows.Forms.ToolTip ttMain;
     }
 }

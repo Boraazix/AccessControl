@@ -31,13 +31,31 @@ namespace AccessControl
                 throw;
             }
         }
+        public static void Remove(Project proj)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    dbContext.Projects.Attach(proj);
+                    dbContext.Projects.Remove(proj);
+
+                    dbContext.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        #region Finders
         public static List<Project> FindAll()
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    return dbContext.Projects.ToList();
+                    return dbContext.Projects.Include("Allocations").Include("Allocations.Developer").Include("Allocations.Developer.Credential").ToList();
                 }
             }
             catch (Exception)
@@ -65,7 +83,7 @@ namespace AccessControl
             {
                 using (Repository dbContext = new Repository())
                 {
-                    return dbContext.Projects
+                    return dbContext.Projects.Include("Allocations").Include("Allocations.Developer").Include("Allocations.Developer.Credential")
                         .Where(p => p.Name.Contains(partialName))
                         .ToList<Project>();
                 }
@@ -75,22 +93,7 @@ namespace AccessControl
                 throw;
             }
         }
-        public static void Remove(Project proj)
-        {
-            try
-            {
-                using (Repository dbContext = new Repository())
-                {
-                    dbContext.Projects.Attach(proj);
-                    dbContext.Projects.Remove(proj);
+#endregion
 
-                    dbContext.SaveChanges();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
     }
 }

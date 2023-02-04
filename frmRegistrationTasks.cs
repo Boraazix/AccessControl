@@ -31,11 +31,6 @@ namespace AccessControl
             InitializeComponent();
             lstProject.DataSource=ProjectRepository.FindAll();
         }
-
-        private void btnDeleteText_Click(object sender, EventArgs e)
-        {
-            txtDescription.Text = "";
-        }
         private void ClearFields()
         {
             txtDescription.Text = ""; txtDescription.Focus();
@@ -43,6 +38,29 @@ namespace AccessControl
             btnDeleteTask.Enabled = true; btnSaveChanges.Enabled = false;
             lstTasks.Enabled = true; lstProject.Enabled = true;
             lstDeveloper.Enabled = true; txtProject.Enabled = true;
+        }
+        private void txtProject_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtProject.Text.Length > 0)
+            {
+                lstProject.DataSource = ProjectRepository.FindByPartialName(txtProject.Text);
+
+                if (lstProject.SelectedIndex < 0)
+                {
+                    lstDeveloper.DataSource = null;
+                    _allocation = null;
+                    lblAllocationDynamic.Text = "";
+                    lstTasks.DataSource = null;
+                }
+            }
+            else
+            {
+                lstProject.DataSource = ProjectRepository.FindAll();
+            }
+        }
+        private void btnDeleteText_Click(object sender, EventArgs e)
+        {
+            txtDescription.Text = "";
         }
         private void btnAddTask_Click(object sender, EventArgs e)
         {
@@ -99,20 +117,6 @@ namespace AccessControl
 
         }
 
-        private void lstTasks_MouseMove(object sender, MouseEventArgs e)
-        {
-            int index = lstTasks.IndexFromPoint(e.Location);
-            if (index >= 0 && index < lstTasks.Items.Count)
-            {
-                string itemText = lstTasks.Items[index].ToString();
-                ttTasks.SetToolTip(lstTasks, itemText);
-            }
-            else
-            {
-                ttTasks.SetToolTip(lstTasks, string.Empty);
-            }
-        }
-
         private void btnEditTask_Click(object sender, EventArgs e)
         {
             try
@@ -144,6 +148,7 @@ namespace AccessControl
                 if(txtDescription.Text=="")
                 {
                     MessageBox.Show("Description was not entered!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtDescription.Focus();
                 }
                 else
                 {
@@ -162,23 +167,17 @@ namespace AccessControl
             }
         }
 
-        private void txtProject_KeyUp(object sender, KeyEventArgs e)
+        private void lstTasks_MouseMove(object sender, MouseEventArgs e)
         {
-            if (txtProject.Text.Length > 0)
+            int index = lstTasks.IndexFromPoint(e.Location);
+            if (index >= 0 && index < lstTasks.Items.Count)
             {
-                lstProject.DataSource = ProjectRepository.FindByPartialName(txtProject.Text);
-
-                if (lstProject.SelectedIndex < 0)
-                {
-                    lstDeveloper.DataSource = null;
-                    _allocation = null;
-                    lblAllocationDynamic.Text = "";
-                    lstTasks.DataSource = null;
-                }
+                string itemText = lstTasks.Items[index].ToString();
+                ttMain.SetToolTip(lstTasks, itemText);
             }
             else
             {
-                lstProject.DataSource = ProjectRepository.FindAll();
+                ttMain.SetToolTip(lstTasks, string.Empty);
             }
         }
 
@@ -201,6 +200,34 @@ namespace AccessControl
                 _allocation = AllocationRepository.FindByDeveloperAndProject((Developer)lstDeveloper.SelectedItem, (Project)lstProject.SelectedItem);
                 lblAllocationDynamic.Text = _allocation.ToString().Substring(_allocation.ToString().IndexOf(" "));
                 lstTasks.DataSource = new List<Task>(_allocation.Tasks);
+            }
+        }
+
+        private void lstProject_MouseMove(object sender, MouseEventArgs e)
+        {
+            int index = lstProject.IndexFromPoint(e.Location);
+            if (index >= 0 && index < lstProject.Items.Count)
+            {
+                string itemText = ((Project)lstProject.Items[index]).Name;
+                ttMain.SetToolTip(lstProject, itemText);
+            }
+            else
+            {
+                ttMain.SetToolTip(lstProject, string.Empty);
+            }
+        }
+
+        private void lstDeveloper_MouseMove(object sender, MouseEventArgs e)
+        {
+            int index = lstDeveloper.IndexFromPoint(e.Location);
+            if (index >= 0 && index < lstDeveloper.Items.Count)
+            {
+                string itemText = ((Developer)lstDeveloper.Items[index]).Name;
+                ttMain.SetToolTip(lstDeveloper, itemText);
+            }
+            else
+            {
+                ttMain.SetToolTip(lstDeveloper, string.Empty);
             }
         }
     }

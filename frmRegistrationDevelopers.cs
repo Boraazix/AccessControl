@@ -47,6 +47,19 @@ namespace AccessControl
             chkActive.Checked = true; chkAdministrator.Checked = false;
             txtName.Focus();
         }
+        private void lstDeveloper_MouseMove(object sender, MouseEventArgs e)
+        {
+            int index = lstDevelopers.IndexFromPoint(e.Location);
+            if (index >= 0 && index < lstDevelopers.Items.Count)
+            {
+                string itemText = ((Developer)lstDevelopers.Items[index]).Name;
+                ttMain.SetToolTip(lstDevelopers, itemText);
+            }
+            else
+            {
+                ttMain.SetToolTip(lstDevelopers, string.Empty);
+            }
+        }
         private void btnRegister_Click(object sender, EventArgs e)
         {
             try
@@ -130,16 +143,17 @@ namespace AccessControl
             btnEditDeveloper.Enabled = false;
             btnChangePassword.Enabled = false;
             btnSaveChanges.Enabled = true;
+            txtRepeatedPassword.Enabled = false;
 
             txtName.Focus();
-
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSaveChanges_Click(object sender, EventArgs e)
         {
             Developer dev = (Developer)lstDevelopers.SelectedItem;
             try
             {
+                // if is editing
                 if (!txtPassword.Enabled)
                 {
                     if (txtName.Text == "")
@@ -177,9 +191,10 @@ namespace AccessControl
                         txtPassword.Enabled = true; lstDevelopers.Enabled = true;
                         btnRegister.Enabled = true; btnDeleteDeveloper.Enabled = true;
                         btnEditDeveloper.Enabled = true; btnChangePassword.Enabled = true;
-                        btnSaveChanges.Enabled = false;
+                        btnSaveChanges.Enabled = false; txtRepeatedPassword.Enabled = true;
                     }
                 }
+                // if is changing password
                 else
                 {
                     if (txtPassword.Text == "")

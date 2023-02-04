@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.btnSaveChanges = new System.Windows.Forms.Button();
             this.btnDeleteProject = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblFinish = new System.Windows.Forms.Label();
             this.dtpFinish = new System.Windows.Forms.DateTimePicker();
+            this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pnlMain.SuspendLayout();
             this.grpRegistration.SuspendLayout();
             this.SuspendLayout();
@@ -100,6 +102,7 @@
             this.lstProjects.Name = "lstProjects";
             this.lstProjects.Size = new System.Drawing.Size(416, 166);
             this.lstProjects.TabIndex = 2;
+            this.lstProjects.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lstProject_MouseMove);
             // 
             // grpRegistration
             // 
@@ -246,5 +249,6 @@
         private System.Windows.Forms.Label lblStart;
         private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.CheckBox chkFinish;
+        private System.Windows.Forms.ToolTip ttMain;
     }
 }

@@ -48,6 +48,29 @@ namespace AccessControl
             dtpPlannedFinish.Value = DateTime.Now;
             txtName.Focus();
         }
+        private void lstProject_MouseMove(object sender, MouseEventArgs e)
+        {
+            int index = lstProjects.IndexFromPoint(e.Location);
+            if (index >= 0 && index < lstProjects.Items.Count)
+            {
+                string itemText = ((Project)lstProjects.Items[index]).Name;
+                ttMain.SetToolTip(lstProjects, itemText);
+            }
+            else
+            {
+                ttMain.SetToolTip(lstProjects, string.Empty);
+            }
+        }
+        private void chkFinish_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkFinish.Checked)
+                dtpFinish.Enabled = true;
+            else
+            {
+                dtpFinish.Enabled = false;
+                dtpFinish.Value = DateTimePicker.MinDateTime;
+            }
+        }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -97,17 +120,6 @@ namespace AccessControl
                 chkFinish.Checked= false;
             else
                 chkFinish.Checked= true;
-        }
-
-        private void chkFinish_CheckedChanged(object sender, EventArgs e)
-        {
-            if(chkFinish.Checked)
-                dtpFinish.Enabled = true; 
-            else
-            {
-                dtpFinish.Enabled = false;
-                dtpFinish.Value = DateTimePicker.MinDateTime;
-            }
         }
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
