@@ -1,6 +1,6 @@
 ﻿namespace AccessControl
 {
-    partial class frmRegistrationTasks
+    partial class FormRegistrationTasks
     {
         /// <summary>
         /// Required designer variable.
@@ -242,15 +242,15 @@
             this.txtDescription.Size = new System.Drawing.Size(280, 87);
             this.txtDescription.TabIndex = 0;
             // 
-            // frmRegistrationTasks
+            // FormRegistrationTasks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 380);
             this.Controls.Add(this.pnlMain);
             this.MaximizeBox = false;
-            this.Name = "frmRegistrationTasks";
-            this.Text = "frmRegistrationTasks";
+            this.Name = "FormRegistrationTasks";
+            this.Text = "Tasks Registration";
             this.pnlMain.ResumeLayout(false);
             this.grpAllocation.ResumeLayout(false);
             this.grpAllocation.PerformLayout();

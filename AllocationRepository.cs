@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AccessControl
 {
@@ -63,7 +60,7 @@ namespace AccessControl
             }
         }
         #region Finders
-        public static List<Allocation> FindAll()
+        public static List<Allocation> FindAllWithDeveloperProjectTask()
         {
             try
             {
@@ -91,7 +88,7 @@ namespace AccessControl
                 throw;
             }
         }
-        public static Allocation FindByIdAll(Int64 id)
+        public static Allocation FindByIdAllWithDeveloperProjectTask(Int64 id)
         {
             try
             {
@@ -125,7 +122,7 @@ namespace AccessControl
                 throw;
             }
         }
-        public static List<Allocation> FindAllocationByProject(Project proj)
+        public static List<Allocation> FindAllocationByProjectWithDeveloperProjectTask(Project proj)
         {
             try
             {
@@ -139,7 +136,7 @@ namespace AccessControl
                 throw;
             }
         }
-        public static List<Allocation> FindAllocationByDeveloper(Developer dev)
+        public static List<Allocation> FindAllocationByDeveloperWithDeveloperProjectTask(Developer dev)
         {
             try
             {
@@ -153,7 +150,7 @@ namespace AccessControl
                 throw;
             }
         }
-        public static Allocation FindByDeveloperAndProject(Developer dev, Project proj)
+        public static Allocation FindByDeveloperAndProjectWithDeveloperProjectTask(Developer dev, Project proj)
         {
             try
             {
@@ -167,7 +164,7 @@ namespace AccessControl
                 throw;
             }
         }
-        public static Allocation FindAllocationByTask(long t)
+        public static Allocation FindAllocationByTaskWithDeveloperProjectTask(long t)
         {
             try
             {
@@ -182,7 +179,7 @@ namespace AccessControl
                 throw;
             }
         }
-        public static List<Allocation> FindByPartialName(String partialName)
+        public static List<Allocation> FindByPartialNameWithDeveloperProjectTask(String partialName)
         {
             try
             {

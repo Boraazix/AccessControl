@@ -10,34 +10,34 @@ using System.Windows.Forms;
 
 namespace AccessControl
 {
-    public partial class frmReportTasksByDeveloperProject : Form
+    public partial class FormReportTasksByDeveloperProject : Form
     {
         #region Singleton
-        private static frmReportTasksByDeveloperProject _instance;
-        public static frmReportTasksByDeveloperProject GetInstance()
+        private static FormReportTasksByDeveloperProject _instance;
+        public static FormReportTasksByDeveloperProject GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
-                _instance = new frmReportTasksByDeveloperProject();
-            _instance.MdiParent = frmMain.ActiveForm;
+                _instance = new FormReportTasksByDeveloperProject();
+            _instance.MdiParent = FormMain.ActiveForm;
             _instance.WindowState = FormWindowState.Normal;
             return _instance;
+        }
+        private FormReportTasksByDeveloperProject()
+        {
+            InitializeComponent();
+            lstDeveloper.DataSource = DeveloperRepository.FindAllWCredential();
+            lstProject.DataSource = ProjectRepository.FindAll();
         }
         #endregion
         private static Developer _selectedDeveloper;
         private static Project _selectedProject;
-        public frmReportTasksByDeveloperProject()
-        {
-            InitializeComponent();
-            lstDeveloper.DataSource = DeveloperRepository.FindAll();
-            lstProject.DataSource = ProjectRepository.FindAll();
-        }
 
         private void txtDeveloper_KeyUp(object sender, KeyEventArgs e)
         {
             if (txtDeveloper.Text.Length > 0)
-                lstDeveloper.DataSource = DeveloperRepository.FindByPartialName(txtDeveloper.Text);
+                lstDeveloper.DataSource = DeveloperRepository.FindByPartialNameWCredential(txtDeveloper.Text);
             else
-                lstDeveloper.DataSource = DeveloperRepository.FindAll();
+                lstDeveloper.DataSource = DeveloperRepository.FindAllWCredential();
             if (lstDeveloper.SelectedIndex < 0)
             {
                 lblSelectedDeveloper.Text = "Select a Developer";
@@ -48,7 +48,7 @@ namespace AccessControl
         private void txtProject_KeyUp(object sender, KeyEventArgs e)
         {
             if (txtProject.Text.Length > 0)
-                lstProject.DataSource = ProjectRepository.FindByPartialName(txtProject.Text);
+                lstProject.DataSource = ProjectRepository.FindByPartialNameWithAllocationDeveloperCredential(txtProject.Text);
             else
                 lstProject.DataSource = ProjectRepository.FindAll();
             if (lstProject.SelectedIndex < 0)
@@ -86,7 +86,7 @@ namespace AccessControl
                 lstDeveloper.Enabled = true; lstProject.Enabled = true;
 
                 lstProject.DataSource = ProjectRepository.FindAll();
-                lstDeveloper.DataSource = DeveloperRepository.FindAll();
+                lstDeveloper.DataSource = DeveloperRepository.FindAllWCredential();
             }
         }
 
@@ -113,7 +113,7 @@ namespace AccessControl
                 txtDeveloper.Enabled = true; txtProject.Enabled = false;
                 lstDeveloper.Enabled = true; lstProject.Enabled = false;
 
-                lstDeveloper.DataSource= DeveloperRepository.FindAll();
+                lstDeveloper.DataSource= DeveloperRepository.FindAllWCredential();
 
                 txtProject.Text = ""; lstProject.DataSource = null;
                 _selectedProject = null;
@@ -126,7 +126,7 @@ namespace AccessControl
         {
             try
             {
-                frmReportTasks.GetInstance(_selectedDeveloper, _selectedProject).Show();
+                FormReportTasks.GetInstance(_selectedDeveloper, _selectedProject).Show();
             }
             catch (Exception ex)
             {

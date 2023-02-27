@@ -1,6 +1,6 @@
 ﻿namespace AccessControl
 {
-    partial class frmRegistrationAllocations
+    partial class FormRegistrationAllocations
     {
         /// <summary>
         /// Required designer variable.

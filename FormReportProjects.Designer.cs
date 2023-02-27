@@ -1,6 +1,6 @@
 ﻿namespace AccessControl
 {
-    partial class frmReportTasks
+    partial class FormReportProjects
     {
         /// <summary>
         /// Required designer variable.
@@ -40,7 +40,7 @@
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(650, 332);
-            this.pnlMain.TabIndex = 3;
+            this.pnlMain.TabIndex = 2;
             // 
             // dgvMain
             // 
@@ -53,14 +53,17 @@
             this.dgvMain.Size = new System.Drawing.Size(624, 306);
             this.dgvMain.TabIndex = 2;
             // 
-            // frmReportTask
+            // frmReportProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 332);
             this.Controls.Add(this.pnlMain);
-            this.Name = "frmReportTask";
-            this.Text = "frmReportTask";
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(667, 371);
+            this.MinimumSize = new System.Drawing.Size(667, 371);
+            this.Name = "frmReportProject";
+            this.Text = "Project Report";
             this.pnlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             this.ResumeLayout(false);

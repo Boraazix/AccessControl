@@ -11,25 +11,25 @@ using System.Windows.Forms;
 
 namespace AccessControl
 {
-    public partial class frmAbout : Form
+    public partial class FormAbout : Form
     {
         #region Singleton
-        private static frmAbout _instance;
-        public static frmAbout GetInstance()
+        private static FormAbout _instance;
+        public static FormAbout GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
             {
-                _instance = new frmAbout();
+                _instance = new FormAbout();
             }
-            _instance.MdiParent = frmMain.ActiveForm;
+            _instance.MdiParent = FormMain.ActiveForm;
             _instance.WindowState = FormWindowState.Normal;
             return _instance;
         }
-        #endregion
-        public frmAbout()
+        private FormAbout()
         {
             InitializeComponent();
         }
+        #endregion
 
         private void lklblKumon_LinkCLicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

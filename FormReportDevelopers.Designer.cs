@@ -1,6 +1,6 @@
 ﻿namespace AccessControl
 {
-    partial class frmReportDevelopers
+    partial class FormReportDevelopers
     {
         /// <summary>
         /// Required designer variable.

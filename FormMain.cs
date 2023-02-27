@@ -10,24 +10,22 @@ using System.Windows.Forms;
 
 namespace AccessControl
 {
-    public partial class frmMain : Form
+    public partial class FormMain : Form
     {
         #region Singleton
-        private static frmMain _instance;
-        public static frmMain GetInstance()
+        private static FormMain _instance;
+        public static FormMain GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
-                _instance = new frmMain();
+                _instance = new FormMain();
             _instance.WindowState= FormWindowState.Maximized;
             return _instance;
         }
-        #endregion
-        public static Developer DeveloperLogged { get; set; }
-        public frmMain()
+        private FormMain()
         {
             InitializeComponent();
-            if (DeveloperLogged.Credential.Administrator 
-                || DeveloperLogged.LevelMemory==Convert.ToChar("A"))
+            if (DeveloperLogged.Credential.Administrator
+                || DeveloperLogged.LevelMemory == 'A')
             {
                 mnuRegistration.Enabled = true;
             }
@@ -36,31 +34,33 @@ namespace AccessControl
                 mnuRegistration.Enabled = false;
             }
         }
+        #endregion
+        public static Developer DeveloperLogged { get; set; }
         #region Clicks
         private void mnuBack_Click(Object sender, EventArgs e)
         {
-            frmLogIn.GetInstance().Show();
+            FormLogIn.GetInstance().Show();
             this.Close();
         }
 
         private void mnuAbout_Click(object sender, EventArgs e)
         {
-            frmAbout.GetInstance().Show();
+            FormAbout.GetInstance().Show();
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            frmLogIn.GetInstance().Show();
+            FormLogIn.GetInstance().Show();
         }
 
         private void mnuDevelopers_Click(object sender, EventArgs e)
         {
-            frmRegistrationDevelopers.GetInstance().Show();
+            FormRegistrationDevelopers.GetInstance().Show();
         }
 
         private void mnuProjects_Click(object sender, EventArgs e)
         {
-            frmRegistrationProjects.GetInstance().Show();
+            FormRegistrationProjects.GetInstance().Show();
         }
 
         private void allocationsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -69,14 +69,14 @@ namespace AccessControl
 
         private void mnuReportDevelopers_Click(object sender, EventArgs e)
         {
-            frmReportDevelopers.GetInstance().Show();
+            FormReportDevelopers.GetInstance().Show();
         }
 
         private void mnuReportProjects_Click(object sender, EventArgs e)
         {
             try
             {
-                frmReportProjects.GetInstance().Show();
+                FormReportProjects.GetInstance().Show();
             }
             catch (Exception ex)
             {
@@ -86,17 +86,17 @@ namespace AccessControl
 
         private void mnuRegistrationAllocations_Click(object sender, EventArgs e)
         {
-            frmRegistrationAllocations.GetInstance().Show();
+            FormRegistrationAllocations.GetInstance().Show();
         }
 
         private void mnuRegistrationTasks_Click(object sender, EventArgs e)
         {
-            frmRegistrationTasks.GetInstance().Show();
+            FormRegistrationTasks.GetInstance().Show();
         }
 
         private void mnuReportTasks_Click(object sender, EventArgs e)
         {
-            frmReportTasksByDeveloperProject.GetInstance().Show();
+            FormReportTasksByDeveloperProject.GetInstance().Show();
         }
 #endregion
 

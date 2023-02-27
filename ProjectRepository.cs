@@ -77,7 +77,7 @@ namespace AccessControl
                 throw;
             }
         }
-        public static List<Project> FindByPartialName(String partialName)
+        public static List<Project> FindByPartialNameWithAllocationDeveloperCredential(String partialName)
         {
             try
             {

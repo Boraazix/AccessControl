@@ -1,6 +1,6 @@
 ﻿namespace AccessControl
 {
-    partial class frmReportTasksByDeveloperProject
+    partial class FormReportTasksByDeveloperProject
     {
         /// <summary>
         /// Required designer variable.
@@ -205,14 +205,14 @@
             this.lblFilterBy.TabIndex = 10;
             this.lblFilterBy.Text = "Filter by:";
             // 
-            // frmReportTasksByDeveloperProject
+            // FormReportTasksByDeveloperProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(585, 264);
             this.Controls.Add(this.pnlMain);
-            this.Name = "frmReportTasksByDeveloperProject";
-            this.Text = "frmReportTasksByDeveloperProject";
+            this.Name = "FormReportTasksByDeveloperProject";
+            this.Text = "Task Report";
             this.pnlMain.ResumeLayout(false);
             this.grpFilter.ResumeLayout(false);
             this.grpFilter.PerformLayout();

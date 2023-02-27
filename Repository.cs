@@ -23,7 +23,7 @@ namespace AccessControl
                 Repository repository = this;
 
                 Credential cr1 = new Credential("adm@gmail.com", "12345678", true, true);
-                Developer admDefault = new Developer("Admin",Convert.ToDateTime("2000/01/01"),Convert.ToChar('A'), cr1);
+                Developer admDefault = new Developer("Admin",Convert.ToDateTime("2000/01/01"),'A', cr1);
 
                 repository.Developers.Add(admDefault);
                 repository.SaveChanges();

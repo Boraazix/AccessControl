@@ -11,26 +11,26 @@ using System.Windows.Forms;
 
 namespace AccessControl
 {
-    public partial class frmRegistrationTasks : Form
+    public partial class FormRegistrationTasks : Form
     {
         private static Allocation _allocation;
         private static Task _selectedTask;
         #region Singleton
-        private static frmRegistrationTasks _instance;
-        public static frmRegistrationTasks GetInstance()
+        private static FormRegistrationTasks _instance;
+        public static FormRegistrationTasks GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
-                _instance = new frmRegistrationTasks();
-            _instance.MdiParent = frmMain.ActiveForm;
+                _instance = new FormRegistrationTasks();
+            _instance.MdiParent = FormMain.ActiveForm;
             _instance.WindowState = FormWindowState.Normal;
             return _instance;
         }
-        #endregion
-        public frmRegistrationTasks()
+        private FormRegistrationTasks()
         {
             InitializeComponent();
-            lstProject.DataSource=ProjectRepository.FindAll();
+            lstProject.DataSource = ProjectRepository.FindAll();
         }
+        #endregion
         private void ClearFields()
         {
             txtDescription.Text = ""; txtDescription.Focus();
@@ -43,7 +43,7 @@ namespace AccessControl
         {
             if (txtProject.Text.Length > 0)
             {
-                lstProject.DataSource = ProjectRepository.FindByPartialName(txtProject.Text);
+                lstProject.DataSource = ProjectRepository.FindByPartialNameWithAllocationDeveloperCredential(txtProject.Text);
 
                 if (lstProject.SelectedIndex < 0)
                 {
@@ -197,7 +197,7 @@ namespace AccessControl
         {
             if(lstDeveloper.SelectedIndex >= 0)
             {
-                _allocation = AllocationRepository.FindByDeveloperAndProject((Developer)lstDeveloper.SelectedItem, (Project)lstProject.SelectedItem);
+                _allocation = AllocationRepository.FindByDeveloperAndProjectWithDeveloperProjectTask((Developer)lstDeveloper.SelectedItem, (Project)lstProject.SelectedItem);
                 lblAllocationDynamic.Text = _allocation.ToString().Substring(_allocation.ToString().IndexOf(" "));
                 lstTasks.DataSource = new List<Task>(_allocation.Tasks);
             }

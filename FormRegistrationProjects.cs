@@ -10,20 +10,19 @@ using System.Windows.Forms;
 
 namespace AccessControl
 {
-    public partial class frmRegistrationProjects : Form
+    public partial class FormRegistrationProjects : Form
     {
         #region Singleton
-        private static frmRegistrationProjects _instance;
-        public static frmRegistrationProjects GetInstance()
+        private static FormRegistrationProjects _instance;
+        public static FormRegistrationProjects GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
-                _instance = new frmRegistrationProjects();
-            _instance.MdiParent = frmMain.ActiveForm;
+                _instance = new FormRegistrationProjects();
+            _instance.MdiParent = FormMain.ActiveForm;
             _instance.WindowState = FormWindowState.Normal;
             return _instance;
         }
-        #endregion
-        public frmRegistrationProjects()
+        private FormRegistrationProjects()
         {
             InitializeComponent();
 
@@ -31,8 +30,8 @@ namespace AccessControl
             btnSaveChanges.Enabled = false;
             try
             {
-                lstProjects.DataSource=ProjectRepository.FindAll();
-                if(lstProjects.Items.Count>0) 
+                lstProjects.DataSource = ProjectRepository.FindAll();
+                if (lstProjects.Items.Count > 0)
                     btnEditProject.Enabled = true;
             }
             catch (Exception ex)
@@ -40,6 +39,7 @@ namespace AccessControl
                 MessageBox.Show(ex.Message, "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+        #endregion
         private void ClearFields()
         {
             txtName.Text = "";

@@ -102,73 +102,73 @@
   <ItemGroup>
     <Compile Include="AllocationRepository.cs" />
     <Compile Include="CredentialRepository.cs" />
-    <Compile Include="frmAbout.cs">
+    <Compile Include="FormAbout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAbout.Designer.cs">
-      <DependentUpon>frmAbout.cs</DependentUpon>
+    <Compile Include="FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
     </Compile>
     <Compile Include="Allocation.cs" />
     <Compile Include="Credential.cs" />
-    <Compile Include="frmMain.cs">
+    <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogIn.cs">
+    <Compile Include="FormLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogIn.Designer.cs">
-      <DependentUpon>frmLogIn.cs</DependentUpon>
+    <Compile Include="FormLogIn.Designer.cs">
+      <DependentUpon>FormLogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistrationAllocations.cs">
+    <Compile Include="FormRegistrationAllocations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegistrationAllocations.Designer.cs">
-      <DependentUpon>frmRegistrationAllocations.cs</DependentUpon>
+    <Compile Include="FormRegistrationAllocations.Designer.cs">
+      <DependentUpon>FormRegistrationAllocations.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistrationDevelopers.cs">
+    <Compile Include="FormRegistrationDevelopers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegistrationDevelopers.Designer.cs">
-      <DependentUpon>frmRegistrationDevelopers.cs</DependentUpon>
+    <Compile Include="FormRegistrationDevelopers.Designer.cs">
+      <DependentUpon>FormRegistrationDevelopers.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistrationProjects.cs">
+    <Compile Include="FormRegistrationProjects.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegistrationProjects.Designer.cs">
-      <DependentUpon>frmRegistrationProjects.cs</DependentUpon>
+    <Compile Include="FormRegistrationProjects.Designer.cs">
+      <DependentUpon>FormRegistrationProjects.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistrationTasks.cs">
+    <Compile Include="FormRegistrationTasks.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegistrationTasks.Designer.cs">
-      <DependentUpon>frmRegistrationTasks.cs</DependentUpon>
+    <Compile Include="FormRegistrationTasks.Designer.cs">
+      <DependentUpon>FormRegistrationTasks.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReportDevelopers.cs">
+    <Compile Include="FormReportDevelopers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReportDevelopers.Designer.cs">
-      <DependentUpon>frmReportDevelopers.cs</DependentUpon>
+    <Compile Include="FormReportDevelopers.Designer.cs">
+      <DependentUpon>FormReportDevelopers.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReportProjects.cs">
+    <Compile Include="FormReportProjects.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReportProjects.Designer.cs">
-      <DependentUpon>frmReportProjects.cs</DependentUpon>
+    <Compile Include="FormReportProjects.Designer.cs">
+      <DependentUpon>FormReportProjects.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReportTasks.cs">
+    <Compile Include="FormReportTasks.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReportTasks.Designer.cs">
-      <DependentUpon>frmReportTasks.cs</DependentUpon>
+    <Compile Include="FormReportTasks.Designer.cs">
+      <DependentUpon>FormReportTasks.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReportTasksByDeveloperProject.cs">
+    <Compile Include="FormReportTasksByDeveloperProject.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReportTasksByDeveloperProject.Designer.cs">
-      <DependentUpon>frmReportTasksByDeveloperProject.cs</DependentUpon>
+    <Compile Include="FormReportTasksByDeveloperProject.Designer.cs">
+      <DependentUpon>FormReportTasksByDeveloperProject.cs</DependentUpon>
     </Compile>
     <Compile Include="Project.cs" />
     <Compile Include="ProjectRepository.cs" />
@@ -179,38 +179,38 @@
     <Compile Include="DeveloperRepository.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="TaskRepository.cs" />
-    <EmbeddedResource Include="frmAbout.resx">
-      <DependentUpon>frmAbout.cs</DependentUpon>
+    <EmbeddedResource Include="FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogIn.resx">
-      <DependentUpon>frmLogIn.cs</DependentUpon>
+    <EmbeddedResource Include="FormLogIn.resx">
+      <DependentUpon>FormLogIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistrationAllocations.resx">
-      <DependentUpon>frmRegistrationAllocations.cs</DependentUpon>
+    <EmbeddedResource Include="FormRegistrationAllocations.resx">
+      <DependentUpon>FormRegistrationAllocations.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistrationDevelopers.resx">
-      <DependentUpon>frmRegistrationDevelopers.cs</DependentUpon>
+    <EmbeddedResource Include="FormRegistrationDevelopers.resx">
+      <DependentUpon>FormRegistrationDevelopers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistrationProjects.resx">
-      <DependentUpon>frmRegistrationProjects.cs</DependentUpon>
+    <EmbeddedResource Include="FormRegistrationProjects.resx">
+      <DependentUpon>FormRegistrationProjects.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistrationTasks.resx">
-      <DependentUpon>frmRegistrationTasks.cs</DependentUpon>
+    <EmbeddedResource Include="FormRegistrationTasks.resx">
+      <DependentUpon>FormRegistrationTasks.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportDevelopers.resx">
-      <DependentUpon>frmReportDevelopers.cs</DependentUpon>
+    <EmbeddedResource Include="FormReportDevelopers.resx">
+      <DependentUpon>FormReportDevelopers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportProjects.resx">
-      <DependentUpon>frmReportProjects.cs</DependentUpon>
+    <EmbeddedResource Include="FormReportProjects.resx">
+      <DependentUpon>FormReportProjects.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportTasks.resx">
-      <DependentUpon>frmReportTasks.cs</DependentUpon>
+    <EmbeddedResource Include="FormReportTasks.resx">
+      <DependentUpon>FormReportTasks.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportTasksByDeveloperProject.resx">
-      <DependentUpon>frmReportTasksByDeveloperProject.cs</DependentUpon>
+    <EmbeddedResource Include="FormReportTasksByDeveloperProject.resx">
+      <DependentUpon>FormReportTasksByDeveloperProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

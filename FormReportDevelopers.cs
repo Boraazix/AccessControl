@@ -11,23 +11,22 @@ using System.Windows.Forms;
 
 namespace AccessControl
 {
-    public partial class frmReportDevelopers : Form
+    public partial class FormReportDevelopers : Form
     {
         #region Singleton
-        private static frmReportDevelopers _instance;
-        public static frmReportDevelopers GetInstance()
+        private static FormReportDevelopers _instance;
+        public static FormReportDevelopers GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
-                _instance = new frmReportDevelopers();
-            _instance.MdiParent = frmMain.ActiveForm;
+                _instance = new FormReportDevelopers();
+            _instance.MdiParent = FormMain.ActiveForm;
             _instance.WindowState = FormWindowState.Normal;
             return _instance;
         }
-        #endregion
-        public frmReportDevelopers()
+        private FormReportDevelopers()
         {
             InitializeComponent();
-            dgvMain.DataSource = DeveloperRepository.FindAll();
+            dgvMain.DataSource = DeveloperRepository.FindAllWCredential();
             dgvMain.Columns[3].HeaderText = "Birth date";
             dgvMain.Columns[4].HeaderText = "Level";
             dgvMain.Columns[5].Visible = false;
@@ -43,5 +42,6 @@ namespace AccessControl
             dgvMain.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvMain.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
+        #endregion
     }
 }

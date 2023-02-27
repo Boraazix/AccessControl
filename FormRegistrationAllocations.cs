@@ -12,31 +12,31 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AccessControl
 {
-    public partial class frmRegistrationAllocations : Form
+    public partial class FormRegistrationAllocations : Form
     {
         #region Singleton
-        private static frmRegistrationAllocations _instance;
-        public static frmRegistrationAllocations GetInstance()
+        private static FormRegistrationAllocations _instance;
+        public static FormRegistrationAllocations GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
-                _instance = new frmRegistrationAllocations();
-            _instance.MdiParent = frmMain.ActiveForm;
+                _instance = new FormRegistrationAllocations();
+            _instance.MdiParent = FormMain.ActiveForm;
             _instance.WindowState = FormWindowState.Normal;
             return _instance;
+        }
+        private FormRegistrationAllocations()
+        {
+            InitializeComponent();
+            lstDeveloper.DataSource = DeveloperRepository.FindAllWCredential();
+            lstProject.DataSource = ProjectRepository.FindAll();
+            lstAllocations.DataSource = AllocationRepository.FindAllWithDeveloperProjectTask();
+            if (lstAllocations.SelectedIndex == -1)
+                lblAllocation.Text = "";
         }
         #endregion
 
         private static Developer _selectedDeveloper;
         private static Project _selectedProject;
-        public frmRegistrationAllocations()
-        {
-            InitializeComponent();
-            lstDeveloper.DataSource=DeveloperRepository.FindAll();
-            lstProject.DataSource=ProjectRepository.FindAll();
-            lstAllocations.DataSource=AllocationRepository.FindAll();
-            if (lstAllocations.SelectedIndex == -1)
-                lblAllocation.Text = "";
-        }
         private void ClearFields()
         {
             txtDeveloper.Text = string.Empty;
@@ -75,7 +75,7 @@ namespace AccessControl
                     MessageBox.Show("Project was not selected!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtProject.Focus();
                 }
-                else if (AllocationRepository.FindByDeveloperAndProject(_selectedDeveloper,_selectedProject)!=null)
+                else if (AllocationRepository.FindByDeveloperAndProjectWithDeveloperProjectTask(_selectedDeveloper,_selectedProject)!=null)
                 {
                     MessageBox.Show("This allocation is already registered!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtDeveloper.Focus();
@@ -90,7 +90,7 @@ namespace AccessControl
                     Allocation allocation=new Allocation(dtpStart.Value.Date, dtpFinish.Value.Date, Convert.ToByte(numHoursPerWeek.Value), Convert.ToDecimal(txtRemuneration.Text), _selectedDeveloper, _selectedProject);
                     AllocationRepository.Save(allocation);
 
-                    lstAllocations.DataSource=AllocationRepository.FindAll();
+                    lstAllocations.DataSource=AllocationRepository.FindAllWithDeveloperProjectTask();
                     MessageBox.Show("Allocation successfully registered.", "Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     ClearFields();
@@ -120,9 +120,9 @@ namespace AccessControl
         private void txtDeveloper_KeyUp(object sender, KeyEventArgs e)
         {
             if(txtDeveloper.Text.Length > 0)
-                lstDeveloper.DataSource=DeveloperRepository.FindByPartialName(txtDeveloper.Text);
+                lstDeveloper.DataSource=DeveloperRepository.FindByPartialNameWCredential(txtDeveloper.Text);
             else
-                lstDeveloper.DataSource=DeveloperRepository.FindAll();
+                lstDeveloper.DataSource=DeveloperRepository.FindAllWCredential();
             if (lstDeveloper.SelectedIndex < 0)
             {
                 lblSelectedDeveloper.Text = "Select a Developer";
@@ -133,7 +133,7 @@ namespace AccessControl
         private void txtProject_KeyUp(object sender, KeyEventArgs e)
         {
             if (txtProject.Text.Length > 0)
-                lstProject.DataSource = ProjectRepository.FindByPartialName(txtProject.Text);
+                lstProject.DataSource = ProjectRepository.FindByPartialNameWithAllocationDeveloperCredential(txtProject.Text);
             else
                 lstProject.DataSource=ProjectRepository.FindAll();
             if (lstProject.SelectedIndex < 0)
@@ -147,9 +147,9 @@ namespace AccessControl
             try
             {
                 if (txtAllocation.Text.Length > 0)
-                    lstAllocations.DataSource = AllocationRepository.FindByPartialName(txtAllocation.Text);
+                    lstAllocations.DataSource = AllocationRepository.FindByPartialNameWithDeveloperProjectTask(txtAllocation.Text);
                 else
-                    lstAllocations.DataSource = AllocationRepository.FindAll();
+                    lstAllocations.DataSource = AllocationRepository.FindAllWithDeveloperProjectTask();
             }
             catch (Exception ex)
             {
@@ -259,7 +259,7 @@ namespace AccessControl
                     if (MessageBox.Show($"Are you sure you want to delete allocation {((Allocation)lstAllocations.SelectedItem).Id}?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     {
                         AllocationRepository.Remove((Allocation)lstAllocations.SelectedItem);
-                        lstAllocations.DataSource = AllocationRepository.FindAll();
+                        lstAllocations.DataSource = AllocationRepository.FindAllWithDeveloperProjectTask();
                         if (lstAllocations.SelectedIndex == -1)
                             lblAllocation.Text = "";
                         MessageBox.Show("Allocation successfully deleted", "Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -302,7 +302,7 @@ namespace AccessControl
         }
         private void btnAddTasks_Click(object sender, EventArgs e)
         {
-            frmRegistrationTasks.GetInstance().Show();
+            FormRegistrationTasks.GetInstance().Show();
         }
 
         private void lstAllocations_SelectedIndexChanged(object sender, EventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace AccessControl
 {
-    partial class frmRegistrationDevelopers
+    partial class FormRegistrationDevelopers
     {
         /// <summary>
         /// Required designer variable.

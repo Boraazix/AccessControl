@@ -51,7 +51,7 @@ namespace AccessControl
             }
         }
         #region Finders
-        public static List<Developer> FindAll()
+        public static List<Developer> FindAllWCredential()
         {
             try
             {
@@ -79,7 +79,7 @@ namespace AccessControl
                 throw;
             }
         }
-        public static Developer FindByIdWCredencial(Int64 id)
+        public static Developer FindByIdWCredential(Int64 id)
         {
             try
             {
@@ -93,7 +93,7 @@ namespace AccessControl
                 throw;
             }
         }
-        public static List<Developer> FindByPartialName(String partialName)
+        public static List<Developer> FindByPartialNameWCredential(String partialName)
         {
             try
             {
@@ -109,7 +109,7 @@ namespace AccessControl
                 throw;
             }
         }
-        public static Developer FindByEmail(String email)
+        public static Developer FindByEmailWCredential(String email)
         {
             try
             {

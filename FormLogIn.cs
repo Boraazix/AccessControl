@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace AccessControl
 {
-    public partial class frmLogIn : Form
+    public partial class FormLogIn : Form
     {
         #region Singleton
-        private static frmLogIn _instance;
-        public static frmLogIn GetInstance()
+        private static FormLogIn _instance;
+        public static FormLogIn GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
-                _instance = new frmLogIn();
+                _instance = new FormLogIn();
             return _instance;
         }
-        #endregion
-        public frmLogIn()
+        private FormLogIn()
         {
             InitializeComponent();
         }
+        #endregion
         private void Authentic()
         {
             try
@@ -41,8 +41,8 @@ namespace AccessControl
                 }
                 else if (CredentialRepository.ValidateDev(txtEmail.Text, txtPassword.Text))
                 {
-                    MessageBox.Show($"Welcome {frmMain.DeveloperLogged.Name}!", "LOG-IN CORRECT", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    frmMain.GetInstance().Show();
+                    MessageBox.Show($"Welcome {FormMain.DeveloperLogged.Name}!", "LOG-IN CORRECT", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FormMain.GetInstance().Show();
                     txtEmail.Focus();
                     this.Hide();
                     txtEmail.Text = "";

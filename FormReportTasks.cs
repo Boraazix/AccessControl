@@ -12,32 +12,31 @@ using System.Windows.Forms;
 
 namespace AccessControl
 {
-    public partial class frmReportTasks : Form
+    public partial class FormReportTasks : Form
     {
         #region Singleton
-        private static frmReportTasks _instance;
+        private static FormReportTasks _instance;
         private static Developer _developer;
         private static Project _project;
-        public static frmReportTasks GetInstance(Developer dev, Project proj)
+        public static FormReportTasks GetInstance(Developer dev, Project proj)
         {
             _developer= dev;
             _project= proj;
             if (_instance == null || _instance.IsDisposed)
-                _instance = new frmReportTasks();
-            _instance.MdiParent = frmMain.ActiveForm;
+                _instance = new FormReportTasks();
+            _instance.MdiParent = FormMain.ActiveForm;
             _instance.WindowState = FormWindowState.Normal;
             return _instance;
         }
-        #endregion
-        public frmReportTasks()
+        private FormReportTasks()
         {
             InitializeComponent();
 
             if (_developer != null && _project != null)
             {
-                if(AllocationRepository.FindByDeveloperAndProject(_developer, _project)!=null)
+                if (AllocationRepository.FindByDeveloperAndProjectWithDeveloperProjectTask(_developer, _project) != null)
                 {
-                    dgvMain.DataSource = AllocationRepository.FindByDeveloperAndProject(_developer, _project).Tasks;
+                    dgvMain.DataSource = AllocationRepository.FindByDeveloperAndProjectWithDeveloperProjectTask(_developer, _project).Tasks;
                 }
                 else
                 {
@@ -47,15 +46,15 @@ namespace AccessControl
             else if (_developer != null)
             {
                 List<Task> tasks = new List<Task>();
-                foreach (Allocation al in AllocationRepository.FindAllocationByDeveloper(_developer))
-                    foreach(Task task in al.Tasks)
+                foreach (Allocation al in AllocationRepository.FindAllocationByDeveloperWithDeveloperProjectTask(_developer))
+                    foreach (Task task in al.Tasks)
                         tasks.Add(task);
                 dgvMain.DataSource = tasks;
             }
             else
             {
                 List<Task> tasks = new List<Task>();
-                foreach (Allocation al in AllocationRepository.FindAllocationByProject(_project))
+                foreach (Allocation al in AllocationRepository.FindAllocationByProjectWithDeveloperProjectTask(_project))
                 {
                     foreach (Task task in al.Tasks)
                     {
@@ -68,5 +67,6 @@ namespace AccessControl
             dgvMain.Columns[0].Width = 30;
             dgvMain.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
+        #endregion
     }
 }

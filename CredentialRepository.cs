@@ -31,7 +31,7 @@ namespace AccessControl
 
                         if (passwordDB == passwordWR)
                         {
-                            frmMain.DeveloperLogged = dev;
+                            FormMain.DeveloperLogged = dev;
                             return true;
                         }
                         else

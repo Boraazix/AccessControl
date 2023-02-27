@@ -1,6 +1,6 @@
 ﻿namespace AccessControl
 {
-    partial class frmAbout
+    partial class FormAbout
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAbout));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout));
             this.ttLigaI = new System.Windows.Forms.ToolTip(this.components);
             this.lklblLigaI = new System.Windows.Forms.LinkLabel();
             this.pnlMain = new System.Windows.Forms.Panel();

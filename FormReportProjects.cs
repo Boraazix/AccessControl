@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace AccessControl
 {
-    public partial class frmReportProjects : Form
+    public partial class FormReportProjects : Form
     {
         #region Singleton
-        private static frmReportProjects _instance;
-        public static frmReportProjects GetInstance()
+        private static FormReportProjects _instance;
+        public static FormReportProjects GetInstance()
         {
             List<Project> projects = ProjectRepository.FindAll();
             if (projects.Count>0)
             {
                 if (_instance == null || _instance.IsDisposed)
-                    _instance = new frmReportProjects();
-                _instance.MdiParent = frmMain.ActiveForm;
+                    _instance = new FormReportProjects();
+                _instance.MdiParent = FormMain.ActiveForm;
                 _instance.WindowState = FormWindowState.Normal;
                 return _instance;
             }
@@ -31,8 +31,7 @@ namespace AccessControl
                 throw new Exception("There are no projects to show");
             }
         }
-        #endregion
-        public frmReportProjects()
+        private FormReportProjects()
         {
             InitializeComponent();
             dgvMain.DataSource = ProjectRepository.FindAll();
@@ -44,5 +43,6 @@ namespace AccessControl
             dgvMain.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvMain.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
+        #endregion
     }
 }

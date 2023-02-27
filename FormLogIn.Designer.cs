@@ -1,6 +1,6 @@
 ﻿namespace AccessControl
 {
-    partial class frmLogIn
+    partial class FormLogIn
     {
         /// <summary>
         /// Variável de designer necessária.

@@ -11,35 +11,35 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace AccessControl
 {
-    public partial class frmRegistrationDevelopers : Form
+    public partial class FormRegistrationDevelopers : Form
     {
         #region Singleton
-        private static frmRegistrationDevelopers _instance;
-        public static frmRegistrationDevelopers GetInstance()
+        private static FormRegistrationDevelopers _instance;
+        public static FormRegistrationDevelopers GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
-                _instance = new frmRegistrationDevelopers();
-            _instance.MdiParent = frmMain.ActiveForm;
+                _instance = new FormRegistrationDevelopers();
+            _instance.MdiParent = FormMain.ActiveForm;
             _instance.WindowState = FormWindowState.Normal;
             return _instance;
         }
-        #endregion
-        public frmRegistrationDevelopers()
+        private FormRegistrationDevelopers()
         {
             InitializeComponent();
 
-            List<Char> options = new List<Char>{'A', 'B', 'C', 'D'};
+            List<Char> options = new List<Char> { 'A', 'B', 'C', 'D' };
             cmbLevel.DataSource = options;
             btnSaveChanges.Enabled = false;
             try
             {
-                lstDevelopers.DataSource = DeveloperRepository.FindAll();
+                lstDevelopers.DataSource = DeveloperRepository.FindAllWCredential();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+        #endregion
         private void ClearFields()
         {
             txtName.Text = ""; dtpBirth.Value = DateTime.Now; txtRepeatedPassword.Text = "";
@@ -84,7 +84,7 @@ namespace AccessControl
                     MessageBox.Show("Repeat the Password!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtRepeatedPassword.Focus();
                 }
-                else if (DeveloperRepository.FindByEmail(txtEmail.Text) != null)
+                else if (DeveloperRepository.FindByEmailWCredential(txtEmail.Text) != null)
                 {
                     MessageBox.Show("This email is already registered!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtEmail.Focus();
@@ -101,7 +101,7 @@ namespace AccessControl
                     Developer dev = new Developer(txtName.Text, dtpBirth.Value.Date, Convert.ToChar(cmbLevel.Text), cr);
 
                     DeveloperRepository.Save(dev);
-                    lstDevelopers.DataSource = DeveloperRepository.FindAll();
+                    lstDevelopers.DataSource = DeveloperRepository.FindAllWCredential();
 
                     MessageBox.Show("Developer successfully registered.", "Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -166,7 +166,7 @@ namespace AccessControl
                         MessageBox.Show("Email not entered!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         txtEmail.Focus();
                     }
-                    else if (dev.Credential.Email != txtEmail.Text && DeveloperRepository.FindByEmail(txtEmail.Text) != null)
+                    else if (dev.Credential.Email != txtEmail.Text && DeveloperRepository.FindByEmailWCredential(txtEmail.Text) != null)
                     {
                         MessageBox.Show("This email is from another developer!", "Something is wrong :/", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         txtEmail.Focus();
@@ -182,7 +182,7 @@ namespace AccessControl
 
                         DeveloperRepository.Save(dev);
 
-                        lstDevelopers.DataSource = DeveloperRepository.FindAll();
+                        lstDevelopers.DataSource = DeveloperRepository.FindAllWCredential();
 
                         MessageBox.Show("Developer Successfully updated.", "Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
